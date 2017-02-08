@@ -1,10 +1,11 @@
-SelfEd Date: 		10/19/2016
+SelfEd Date: 	10/19/2016
 
 SelfEd Title:           SelfEd-Angular-States-Understanding-Of
 
-SelfEd Objective:       To understanding 
+SelfEd Objective:       To better understand routes (states) and the differences
+                        between ngRoute and ui-router
 
-SelfEd Catalyst:
+SelfEd Catalyst:        To better know an important component of Angular.     
 
 SelfEd References:
             https://leanpub.com/router
