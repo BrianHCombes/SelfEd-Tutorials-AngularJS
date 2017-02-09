@@ -2,7 +2,7 @@
 #**AngularJS - _Understanding States_**
 Run in Plunker | Citation / Note
 ----------------------------------------------------------------------------|--------------------------------------------------------
-[:small_blue_diamond:**ngRoute and ui-router in same config module - Basic-States_Exp0a.html**]()| **It can't be good!**       
+[:small_blue_diamond:**ngRoute and ui-router in same config module** - _Basic-States_Exp0a.html_]()| **It can't be good!**       
 [:small_blue_diamond:**Finite States using ngRoute - Basic-States_Exp0b.html**](https://plnkr.co/edit/L5PndkcloCtAPt9bln5o?p=preview) | 
 [:small_blue_diamond:**Finite States using ui-router - Basic-States_Exp0c.html**](https://plnkr.co/edit/ngVu8z4eEdp2dqp7hzKS?p=preview) | [Citation AAC - Author credit for basic code structure](https://github.com/BrianHCombes/SelfEd-Tutorials-Javascript/blob/master/SelfEd-Javascript-Functions-Asynchronous-Calls/References.md)
 
