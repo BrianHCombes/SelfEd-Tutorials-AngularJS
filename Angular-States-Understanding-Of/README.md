@@ -50,8 +50,8 @@ It has a bit of funny behavior: when you click on a **ui.router** button it disp
             
 I've separated the two into separate files. They are:
                 
-[Basic-States_Exp0b.html - Finite states using ngRoute](https://plnkr.co/edit/L5PndkcloCtAPt9bln5o?p=preview) 
-[Basic-States_Exp0c.html - Finite states using ngRoute](https://plnkr.co/edit/ngVu8z4eEdp2dqp7hzKS?p=preview) 
+[Basic-States_Exp0b.html - Finite states using ngRoute](https://plnkr.co/edit/L5PndkcloCtAPt9bln5o?p=preview)    
+[Basic-States_Exp0c.html - Finite states using ui-router](https://plnkr.co/edit/ngVu8z4eEdp2dqp7hzKS?p=preview) 
     
 The outcomes appear identical but I recommend using ui-router for development because it has many more options and capabilites.
 
