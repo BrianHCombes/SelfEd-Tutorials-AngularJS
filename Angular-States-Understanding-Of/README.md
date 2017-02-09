@@ -24,6 +24,7 @@ Run in Plunker | Citation / Note
 [AAC](https://github.com/BrianHCombes/SelfEd-Tutorials-Javascript/blob/master/SelfEd-Javascript-Functions-Asynchronous-Calls/References.md)  | Primary tutorial credit goes to: **Joel Hooks**. His tutorial that helped me the most is here:   http://joelhooks.com/blog/2013/07/22/the-basics-of-using-ui-router-with-angularjs/ 
                       | https://leanpub.com/router
                       | https://medium.com/@vsavkin
+                      | https://ui-router.github.io/guide/states
                       | https://ui-router.github.io/ng1/
                       | https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router
                       | http://ngmodules.org/modules/ui-router
