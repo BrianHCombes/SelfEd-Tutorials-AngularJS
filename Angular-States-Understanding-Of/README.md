@@ -40,7 +40,7 @@ Although I started this SelfEd in Oct 2016, I am back to prep for presentation o
 
 Per the above link, the most glaring difference is **$routeProvider** only allows one view using **ng-view** but **$stateProvider** allows multiple views and nested views using **ui-view**.
 
-My favorite tutorial book: **AngularJS Up and Running** starts off with **ngRoute** with **$routeProvider**and makes mention there are alternatives. In fact, on page 141, it mentions ngRoute is no longer part of the core AngularJS library because there are so many routing alternatives available. It then discusses the ui-router alternative on page 165.
+My favorite tutorial book: [**AngularJS Up and Running**](https://www.safaribooksonline.com/library/view/angularjs-up-and/9781491901939/)  starts off with **ngRoute** with **$routeProvider**and makes mention there are alternatives. In fact, on page 141, it mentions ngRoute is no longer part of the core AngularJS library because there are so many routing alternatives available. It then discusses the ui-router alternative on page 165.
 
 Since this SelfEd is about **states** I'll stick with the **ui-router** dependency which is an alternative to **ngRoute**. However, this SelfEd uses only a single view in the examples so it is likely I could also use **ngRoute** to do the same thing. For practice I used ** ngRoute _JUST NOW!_**  Rather, I added **ngRoute** along side **ui.router** and it works. See SelfEd file:
     
