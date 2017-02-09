@@ -4,7 +4,7 @@ Run in Plunker | Citation / Note
 ----------------------------------------------------------------------------|--------------------------------------------------------
 [:small_blue_diamond:**Basic-States_Exp0a.html - ngRoute and ui-router in same config module**]()| It's gotta be bad!       
 [:small_blue_diamond:**Basic-States_Exp0b.html - Finite States using ngRoute**](https://plnkr.co/edit/L5PndkcloCtAPt9bln5o?p=preview) | 
-[:small_blue_diamond:**Basic-States_Exp0C.html - Finite States using ui-router**](https://plnkr.co/edit/ngVu8z4eEdp2dqp7hzKS?p=preview) | [Citation AAC - Author credit for basic code structure](https://github.com/BrianHCombes/SelfEd-Tutorials-Javascript/blob/master/SelfEd-Javascript-Functions-Asynchronous-Calls/References.md)
+[:small_blue_diamond:**Basic-States_Exp0c.html - Finite States using ui-router**](https://plnkr.co/edit/ngVu8z4eEdp2dqp7hzKS?p=preview) | [Citation AAC - Author credit for basic code structure](https://github.com/BrianHCombes/SelfEd-Tutorials-Javascript/blob/master/SelfEd-Javascript-Functions-Asynchronous-Calls/References.md)
 
 
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
