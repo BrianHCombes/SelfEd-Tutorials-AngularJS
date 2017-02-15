@@ -1,0 +1,100 @@
+<!-- This file is a member of SelfEd: < SelfEd-Angular-States-Understanding-Of > -->
+<!-- The archive name of this file is: Basic-States_Exp0c.html --> 
+<!-- It is a simple example using ui-router --> 
+<!DOCTYPE html>
+<head>
+<title>SelfEd – Angular - Basic States - ui.router</title>
+<link rel="SHORTCUT ICON" href=support/teacher-icon.png>
+
+<style>
+a
+{
+font-size:26px;    
+text-decoration:none;
+background-color:cyan; 
+border: 2px solid black;
+padding:5px 20px 5px 20px;
+margin-right:20px; 
+border-radius:5px;
+/*cursor: pointer;*/
+}
+.active
+{ 
+color: red; 
+font-weight: bold;
+}
+
+.routeBtns:focus
+{ 
+color: red; 
+font-weight: bold;
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+</head>             
+
+<body ng-app="helloworld">
+    <h1> Simple States - Using ui.router<br>Compare to using ngRoute</h1>
+    <h3 style="color:blue;">
+        Per this very simple example there is apparently no obvious difference<br>
+        between the outcome of <span style="color:red;">ngRoute</span>
+        and <span style="color:red;">ui-router.</span> However, there are many<br>
+        more options with ui-router and 
+        <span style="color:red;">I recommend defaulting to ui-router</span><br>
+        when developing. This is a great discussion about which to use:<br>
+    </h3>
+    <div style="margin:10px 0px;">
+        <a href="http://stackoverflow.com/questions/21023763/angularjs-difference-between-angular-route-and-angular-ui-router"  
+           target="_blank"  
+           style="background-color:yellow;">
+           ngRoute or ui-router
+        </a>
+    </div>   
+    <br><br> 
+    
+    <div>Click below for different routes (states)</div>
+    <div style="margin:20px 0px;"><a data-ui-sref="hello1" data-ui-sref-active="active">Hello1 from ui.router</a></div>
+    <div style="margin:20px 0px;"><a data-ui-sref="hello2" data-ui-sref-active="active">Hello2 from ui.router</a></div>
+    <div style="margin:20px 0px;"><a data-ui-sref="hello3" data-ui-sref-active="active">Hello3 from ui.router</a></div>
+    
+    <div data-ui-view>Your ui-view should show here</div>
+    
+   
+<script>  
+    
+var myApp = angular.module('helloworld', ['ui.router']);
+
+myApp.config(['$stateProvider', function($stateProvider) {
+    
+    var helloState = {
+        name: 'hello1',
+        url: '/hello1url',
+        template: '<h2>Hello ui.router! This <span style="color:blue;">1st finite state</span> is using ui.router!!</h2>'
+    };
+
+    var aboutState = {
+        name: 'hello2',
+        url: '/hello2url',
+        template: '<h2>Hello ui.router! This <span style="color:blue;">2nd finite state</span> is using ui.router!!</h2>'
+    };
+
+    var extraState = {
+        name: 'hello3',
+        url: '/hello3url',
+        templateUrl: './extra.tmpl_Exp0c.html'
+    };  
+
+    $stateProvider.state(helloState);
+    $stateProvider.state(aboutState);
+    $stateProvider.state(extraState);
+  
+}]);
+    
+</script>    
+    
+  </body>
+</html>

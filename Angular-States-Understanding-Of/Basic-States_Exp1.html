@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!-- This file is a member of SelfEd: < SelfEd-Angular-States-Understanding-Of > --> 
+<html ng-app="KnowStates">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SelfEd - States Understanding of</title>
+    <link rel="SHORTCUT ICON" href=support/teacher-icon.png>
+
+<style>
+    
+body
+{
+width:600px;
+margin-left:auto;
+margin-right:auto;
+}
+     
+button
+{
+color:red;
+font-size:26px;    
+text-decoration:none;
+background-color:cyan; 
+border: 2px solid black;
+padding:5px 20px 5px 20px;
+margin-right:20px; 
+border-radius:5px;
+cursor: pointer;
+}    
+
+a
+{
+font-size:24px;
+font-weight:bold; 
+background-color:yellow;
+padding:5px 20px;
+border:1px solid black;
+border-radius:3px;
+}
+
+</style>
+        
+</head>
+<body>
+    <h1 style="color:red">SelfEd - Understanding States - ui-router</h1>
+    <div id="textAA">
+        There are 4 states (views) defined in this AngularJS app. 
+        Click on State1 
+        thru State4 to see the different states. Notice that State3 is 
+        not underlined and shows no pointer when you hover over it. 
+        This is because this state has no URL defined in the state's 
+        object properties in the config module. See
+        <span style="color:blue;"><b>Code Block CCC</b></span> in the JS code 
+        for the undefined URL. Else click on the states for details.
+        And specifically click on State 3 for a discussion about this
+        URL.
+    </div>
+    <br>
+
+    <div style="border:1px solid black; padding:10px;">
+        <span style="color:red;"><b>Note:</b><br>
+            &rarr; The four yellow &lt;a&gt; tag links here use ui-sref.<br>
+            &rarr; The cyan buttons below use $state.go via a function 
+                   call for the same result.</span><br><br>
+        <a data-ui-sref="stateName1" data-ui-sref-active="active">State1</a><span style="margin-right:20px;"></span> 
+        <a data-ui-sref="stateName2" data-ui-sref-active="active">State2</a><span style="margin-right:20px;"></span> 
+        <a data-ui-sref="stateName3" data-ui-sref-active="active">State3</a><span style="margin-right:20px;"></span> 
+        <a data-ui-sref="stateName4" data-ui-sref-active="active">State4</a><span style="margin-right:20px;"></span>
+    </div>
+    <br><br>
+
+    <div data-ui-view style="background-color:#EFEFEF; padding:5px 20px; border:2px solid black; border-radius:8px;">This is the place for various states</div>
+
+    <br><br>
+    <div ng-controller="StateCtrl as sCtrl">
+
+        <button ng-click="sCtrl.setStateA()" style="">State 1</button> Cyan buttons use <span style="color:red;"><b>$state.go()</b></span>, yellow buttons use <span style="color:red;"><b>ui-sref.</b></span><br><br>
+        <button ng-click="sCtrl.setStateB()" style="">State 2</button> Cyan buttons use <span style="color:red;"><b>$state.go()</b></span>, yellow buttons use <span style="color:red;"><b>ui-sref.</b></span><br><br>
+        <button ng-click="sCtrl.setStateC()" style="">State 3</button> Cyan buttons use <span style="color:red;"><b>$state.go()</b></span>, yellow buttons use <span style="color:red;"><b>ui-sref.</b></span><br><br>
+        <button ng-click="sCtrl.setStateD()" style="">State 4</button> Cyan buttons use <span style="color:red;"><b>$state.go()</b></span>, yellow buttons use <span style="color:red;"><b>ui-sref.</b></span><br><br>
+
+        <button ng-click="sCtrl.getState()" 
+                style="background-color:#ddddff">Get current state's properties using the $state.current property - See
+            <span style='color:blue; font-size:20px;'><b>Code Block EEE</b></span></button>
+        <br><br><br>
+
+        <div style="padding:5px 20px; border:2px solid black; border-radius:8px; background-color:#EFEFEF;">
+            <div style="font-size:24px; color:blue; text-align:center;">
+                <b>Select the State's properties you want to review using the $state.get() method: 
+                    See <span style='font-size:20px; color:red;'>Code Block FFF</span></b></div><br>
+            
+            <select name="stateProperties" ng-model="sCtrl.stateSelected" style="font-size:20px;">
+                <option value="1">State 1 Properties</option>
+                <option value="2">State 2 Properties</option>
+                <option value="3">State 3 Properties</option>
+                <option value="4">State 4 Properties</option>
+            </select><br><br>
+
+            <button ng-click="sCtrl.getStateProperties()" style="background-color:#ccccff">Get Properties</button><br><br>
+
+            <div>  
+                <span style="color:red;"><b>Current state's name:</b></span> {{sCtrl.sName}} <br>
+                <span style="color:red;"><b>Current state's url:</b></span> {{sCtrl.sUrl}} <br>
+                <span style="color:red;"><b>Current state's template:</b></span> {{sCtrl.sTemplate}} <br>
+                <span style="color:red;"><b>Current state's templateUrl:</b></span> {{sCtrl.sTemplateUrl}} 
+            </div>
+
+
+            <div style="color:purple; font-size:24px;">{{sCtrl.stateMessage}}</div>
+        </div>    
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+
+<script>    
+
+    var myApp = angular.module('KnowStates', ['ui.router']);
+
+    myApp.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/');
+
+        // Code Block AAA
+        var stateObj1 = { 
+            name: 'stateName1',
+            url: '/',
+            template: "<h3><span style='color:red;'>This is State 1:</span></h3>" +
+                "&#9658; It's saying hello world! and it is the default state " +
+                "because the url-property:value is " +
+                "<span style='color:red;'><b>\"/\"</b></span> (yes, a forward " +
+                "slash).<br><br>&#9658; You'll notice a hash mark before the " +
+                "forward slash at the end of the url path in this browser. See " +
+                "<span style=\"color:blue;\"><b>Code Block AAA</b></span> in " +
+                "the config module. Click on State 3 for a full discussion about " +
+                "the significance of the hash mark. <span style='color:red;'>" +
+                "<b><br><br>Meanwhile, this text is the value part of the " +
+                "template property that is part of this state's definition." +
+                "</b></span><br><br> " +
+                "<a href='http://stackoverflow.com/questions/37213539/plunkr-angular2-router-browser-url-change' " +
+                "target='_blank' style='all:initial; color:blue;'><b><u>How to " +
+                "view url path in Plunker</u></b></a><br><br>",
+        }
+
+        // Code Block BBB
+        var stateObj2 = {
+            name: 'stateName2',
+            url: '/stateURL2',
+            template: "<h3><span style='color:red;'>This is State 2:</span></h3>" +
+                "&#9658; It is the same as State 1 but its url value is defined " +
+                "as <span style='color:red;'>/stateURL2</span> in the config " +
+                "module. If your reading this: look in the url path box in this " +
+                "browser. You'll see <span style='color:red;'>/stateURL2</span> " +
+                "at the end of the absolute url. See " +
+                "<span style=\"color:blue;\"><b>Code Block BBB.</b></span><br><br>" +
+                "<span style='color:red;'><b>Meanwhile, this text is the value " +
+                "part of the template property that is part of this state's " +
+                "definition.</b></span><br><br>" +
+                "<a href='http://stackoverflow.com/questions/37213539/plunkr-angular2-router-browser-url-change' " +
+                "target='_blank' style='all:initial; color:blue;'><b><u>How to " +
+                "view url path in Plunker</u></b></a><br><br>",
+        }
+        // Code Block CCC
+        var stateObj3 = {
+            name: 'stateName3',
+            // url: '/',
+            templateUrl: './State3.tmpl_Exp1.html'
+        }  
+
+        var stateObj4 = {
+            name: 'stateName4',
+            url: '/cached',
+            templateUrl: 'state4.cached_Exp1.html'
+        }
+
+        $stateProvider.state(stateObj1);
+        $stateProvider.state(stateObj2);
+        $stateProvider.state(stateObj3);
+        $stateProvider.state(stateObj4);
+    }])
+
+
+    myApp.controller('StateCtrl', ['$log', '$state', function($log, $state){
+        var stateObj = this;
+        
+        // initialize drop down list
+        stateObj.stateSelected = "1";
+        
+        
+        stateObj.setStateA = function(){
+            $state.go('stateName1');
+        };
+
+        stateObj.setStateB = function(){
+            $state.go('stateName2');
+        };
+
+        stateObj.setStateC = function(){
+            $state.go('stateName3');
+        };
+
+        stateObj.setStateD = function(){
+            $state.go('stateName4');
+        };
+
+        // Code Block EEE
+        stateObj.getState = function(objVar){
+            var currentState = $state.current;
+            stateObj.sName = currentState.name;
+            stateObj.sUrl =  currentState.url;
+            stateObj.sTemplate = currentState.template;
+            stateObj.sTemplateUrl = currentState.templateUrl;
+        };
+
+        // Code Block FFF
+        stateObj.getStateProperties = function(){
+            var stateProperties = $state.get("stateName" + stateObj.stateSelected);
+            stateObj.sName = stateProperties.name;
+            stateObj.sUrl = stateProperties.url;
+            stateObj.sTemplate = stateProperties.template;
+            stateObj.sTemplateUrl = stateProperties.templateUrl;
+        }
+    }])
+
+</script>
+<!-- Code Block DDD -->
+<script type="text/ng-template" id="state4.cached_Exp1.html">
+    <h3><span style='color:red;'>This is State 4:</span></h3>
+    <span style='color:red; font-size:initial;'>This text is from the cached 
+    template called: State4.cached_Exp1.html. The <b>templateUrl</b> property is
+    used to access this cached template and <b>NOT</b> the url property.</span>
+    <br><br>&#9658; This is like the other states except this text template is
+    cached (kept) within a &lt;script&gt; block. This &lt;script&gt; block has
+    a type definition of: <b>type="text/ng-template"</b> which apparently allows
+    for this HTML template to be in a stand alone &lt;script&gt; block. See 
+    <span style='color:blue;'><b>Code Block DDD.</b></span><br><br>&#9658; Its 
+    url value is defined as <span style='color:red;'><b>/cached</b></span> in 
+    the config module. Like the others, look in the url path box in this 
+    browser. You'll see <span style='color:red;'><b>/cached</b></span> at the 
+    end of the absolute url.<br><br> 
+    <a href='http://stackoverflow.com/questions/37213539/plunkr-angular2-router-browser-url-change' 
+    target='_blank' style='all:initial; color:blue;'><b><u>How to view url 
+    path in Plunker</u></b></a><br><br>
+</script>    
+
+</body>
+</html>
+
+

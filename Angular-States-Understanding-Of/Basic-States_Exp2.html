@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!-- 
+This file is a member of SelfEd: < SelfEd-Angular-States-Understanding-Of >
+-->
+<html ng-app="KnowStates">
+<head>
+    <title>SelfEd - States Understanding of</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    
+body
+{
+width:600px;
+margin-left:auto;
+margin-right:auto;
+}    
+
+#viewStyle
+{
+background-color:#EFEFEF; 
+padding:5px 20px; 
+border:2px solid black; 
+border-radius:8px;
+}
+
+button
+{
+color:red;
+font-size:26px;    
+text-decoration:none;
+background-color:cyan; 
+border: 2px solid black;
+padding:5px 20px 5px 20px;
+margin-right:20px; 
+border-radius:5px;
+cursor: pointer;
+}   
+
+a
+{
+font-size:24px;
+font-weight:bold; 
+background-color:yellow;
+padding:5px 20px;
+border:1px solid black;
+border-radius:3px;
+}
+
+</style>    
+
+</head>
+<body ng-controller="StateCtrl as sCtrl">
+    <h1 style="color:red; text-align:center;">SelfEd - Understanding States - ui-router<br><span style="color:blue;">Other default view options</span></h1>
+   
+    <div id="viewStyle" data-ui-view>
+        <h3>
+            If you see this the default view is not responding.
+        </h3>    
+    </div>
+    <br>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+
+<script>    
+
+    var myApp = angular.module('KnowStates', ['ui.router']);
+
+    myApp.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/');
+
+        var defaultViewObj = {
+            name:   "defaultViewName",
+            url:    "/defaultViewUrl",
+            templateUrl: "./defaultView.tmpl_Exp2.html"
+        }
+                   
+        var stateWithinStateObj = {
+            name: 'stateWithinStateName',
+            url:  '/stateWithinStateUrl',
+            parent: "defaultViewName",
+            views: { "nestedView1":{templateUrl:"./nestedView.tmpl_Exp2.html"},   
+            }
+        }
+        $stateProvider.state(defaultViewObj);
+        $stateProvider.state(stateWithinStateObj);
+        
+    }])
+
+
+    myApp.controller('StateCtrl', ['$log', '$state', '$timeout', function($log, $state, $timeout){
+        var stateObj = this;
+    
+        stateObj.btnMessage = "Activate a state within a state which is still a state. \n In other words, a nested view.";
+
+        stateObj.stateWithinState = function(){
+            //alert("Entered" + $state.current.name);
+            
+            if($state.current.name == "defaultViewName"){
+                $state.go('stateWithinStateName');
+                stateObj.btnMessage = "Return to Default View"
+            }
+            else {
+                //alert("Made it in the else");
+                $state.go('defaultViewName');
+                stateObj.btnMessage = "Activate a state within a state which is still a state. \n In other words, a nested view.";
+                //stateObj.btnMessage = "Default";
+            }
+        }
+    }])
+
+
+/****************************************************************************/
+//  The $state.go method inside the myApp.run method works to initialize the 
+//  page state to defaultViewName
+//  You must enter the object property defaultViewName as the argument
+
+    
+// Code Block AAA     
+myApp.run(['$state', function ($state) {
+        $state.go('defaultViewName');
+    }])
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<h3><span style='color:red;'>This is State 3:</span></h3>
+<span style='color:red; font-size:initial;'>This text is from the HTML template 
+file called: State3.tmpl_Exp1.html. The <b>templateUrl</b> property is used to 
+access this template file and <b>NOT</b> the url property.</span><br><br>
+<span style='color:black; font-size:initial;'>&#9658; Up to this point I have 
+<b>NOT</b> come across much discussion about the nuances about using the url 
+property. But its value is treated as a url fragment or a path parameter because 
+it gets a hash mark inserted between the absolute url path and the url part as 
+defined in this url-property:value in the code of this config module.<br><br>
+&#9658; In State 3, here, there is no url property defined. See 
+<span style='color:blue;'><b>Code Block CCC</b></span>. I do know the presence 
+of the url property affects browser behavior. When present it can define the 
+default view (as in State 1). When present it's remembered as a unique url that 
+<b>IS</b> recognized by the back and forward buttons. Also, it appears to be 
+treated as a <b>relative url</b> within the confines of ui-router.Without the
+url property 
+the view (state) will <b>NOT</b> be recognized by the back or forward button 
+as is the case with this State. Also, if not present, there's no cursor pointer 
+when hovering over it.<br><br> &#9658; Aside from these observations, maybe 
+it's useful when evaluating the current state in order to load the correct next 
+state.<br><br>Here's a couple of recommended links discussing the hash mark and
+a url description:</span><br><br> 
+<a href="https://www.oho.com/blog/explained-60-seconds-hash-symbols-urls-and-seo" 
+   target="_blank" 
+   style="all:initial; color:blue;"><u><b>About that Hash Mark</b></u></a><br><br>
+<a href="https://www.reference.com/technology/url-80ba1ae105569ffb?qo=contentSimilarQuestions#"
+   target="_blank"
+   style="all:initial; color:blue;"><u><b>URL Description</b></u></a><br><br>
+<a href='http://stackoverflow.com/questions/37213539/plunkr-angular2-router-browser-url-change' 
+   target='_blank' 
+   style='all:initial; color:blue;'><b><u>How to view url path in Plunker</u></b></a><br><br>   
+   

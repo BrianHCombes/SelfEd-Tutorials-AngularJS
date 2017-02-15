@@ -1,0 +1,90 @@
+<!-- This file is a member of SelfEd: < SelfEd-Angular-States-Understanding-Of > -->
+<!-- The archive name of this file is: Basic-States_Exp0b.html -->    
+<!-- It is a simple example using ngRoute --> 
+<!DOCTYPE html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SelfEd – Angular - Basic States - ngRoute</title>
+<link rel="SHORTCUT ICON" href=support/teacher-icon.png>
+
+<style>
+a
+{
+font-size:26px;    
+text-decoration:none;
+background-color:cyan; 
+border: 2px solid black;
+padding:5px 20px 5px 20px;
+margin-right:20px; 
+border-radius:5px;
+}
+.active
+{ 
+color: red; 
+font-weight: bold;
+}
+
+.routeBtns:focus
+{ 
+color: red; 
+font-weight: bold;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+</head>
+
+<body ng-app="helloNgRoute">
+    <h1> Simple States - Using ngRoute<br>Compare to using ui.router</h1>
+    <h3 style="color:blue;">
+        Per this very simple example there is apparently no obvious difference<br>
+        between the outcome of <span style="color:red;">ngRoute</span>
+        and <span style="color:red;">ui-router.</span> However, there are many<br>
+        more options with ui-router and 
+        <span style="color:red;">I recommend defaulting to ui-router</span><br>
+        when developing. This is a great discussion about which to use:<br>
+    </h3>
+    <div style="margin:10px 0px;">
+        <a href="http://stackoverflow.com/questions/21023763/angularjs-difference-between-angular-route-and-angular-ui-router"  
+           target="_blank"  
+           style="background-color:yellow;">
+           ngRoute or ui-router
+        </a>
+    </div>   
+    <br><br> 
+    <div>Click below for different routes (states)</div>
+    <div style="margin:20px 0px;"><a href="#/hello1" class="routeBtns">Hello1 from ngRoute</a></div>
+    <div style="margin:20px 0px;"><a href="#/hello2" class="routeBtns">Hello2 from ngRoute</a></div>
+    <div style="margin:20px 0px;"><a href="#/hello3" class="routeBtns">Hello3 from ngRoute</a></div>
+    <br><br>
+       
+    <div ng-view></div>
+   
+<script>  
+    
+    var myApp = angular.module('helloNgRoute', ['ngRoute']);
+
+    myApp.config(['$routeProvider', function($routeProvider) {
+
+        $routeProvider
+        .when('/hello1',{    
+            template: '<h2>Hello ngRoute! This <span style="color:blue;">1st finite state</span> is using ngRoute!!</h2>'
+        })
+
+        .when('/hello2',{
+            template: '<h2>Hello ngRoute again! This <span style="color:blue;">2nd finite state</span> is also using ngRoute!!</h2>'
+        })
+
+        .when('/hello3', {
+            templateUrl: './extra.tmpl_Exp0b.html' // Plunker (maybe not) requires the path to look like this: 'extra.tmpl_Exp0b.html' no period or forward slash
+        });  
+
+    }]);
+    
+</script>    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<h3>
+    <span style='color:red;'>Within this box is the default state:</span>
+</h3>
+<span style='color:red; font-size:initial;'>
+    In this example, defaulting to this state does <b>NOT</b> rely on the 
+    state's url property being set to <span style="color:blue;"><b>"/"</b></span>. 
+    The url path in this case includes a parameter as follows: 
+    <span style="color:blue;"><b>"/defaultViewUrl"</b></span> 
+    Please inspect the path in this browser's url bar to confirm.<br><br>
+</span>
+
+<span style='color:black; font-size:initial;'>
+    &#9658; Rather, this default state is obtained by using the Angular module 
+    method <span style="color:red;"><b>run(initializationFn)</b></span> 
+    which is designed to load all initial work after the configuration modules 
+    are loaded.<br><br> 
+    &#9679; See <span style="color:red;"><b>Code Block AAA</b></span><br><br>
+    &#9679; See <a  href="https://docs.angularjs.org/api/ng/type/angular.Module" 
+                target="_blank" 
+                style="all:initial; color:blue;">
+                <b>API about .run() method</b></a><br><br>
+    &#9679; See <a  href="https://docs.angularjs.org/guide/module"
+                target="_blank"
+                style="all:initial; color:blue;">
+                <b>API about Run Blocks</b></a>
+    <br><br>           
+    &#9658; In the run module the <b>$state.go()</b> method is called to 
+            transition to the specified default state. See 
+            <span style="color:red;"><b>Code Block AAA</b></span>
+    <br><br>
+    &#9658; Note: there is also the <b>$state.transitionTo()</b> method.
+            However, it is automatically called within the $state.go() 
+            method and thus is not recommended for use when $state.go() 
+            will suffice.
+    <br><br>
+</span>
+    
+<a  href='http://stackoverflow.com/questions/37213539/plunkr-angular2-router-browser-url-change' 
+    target='_blank' 
+    style='all:initial; color:blue;'>
+    <b><u>How to view url path in Plunker</u></b>
+</a>    
+    <br><br>   
+    <div style="text-align:center; color:red;">
+        <b>Now for a look ahead at nested states (or views). Click the button below.</b>
+    </div>   
+<button  
+    ng-click='sCtrl.stateWithinState()'    
+    style="font-size:20px; margin-left:37px; text-align:center;">
+    {{sCtrl.btnMessage}}
+</button>    
+   
+  <br><br>
+<div data-ui-view="nestedView1" style="text-align:center;">
+    This is where the nested view will show when button clicked
+</div>

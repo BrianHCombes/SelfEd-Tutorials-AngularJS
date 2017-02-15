@@ -1,0 +1,111 @@
+<!-- This file is a member of SelfEd: < SelfEd-Angular-States-Understanding-Of > -->
+<!-- The archive name of this file is: Basic-States_Exp0a.html -->    
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SelfEd – Angular - Basic States - ui.router</title>
+    <link rel="SHORTCUT ICON" href=support/teacher-icon.png>
+    
+<style>
+a
+{
+font-size:26px;    
+text-decoration:none;
+background-color:cyan; 
+border: 2px solid black;
+padding:5px 20px 5px 20px;
+margin-right:20px; 
+border-radius:5px;
+}
+.active
+{ 
+color: red; 
+font-weight: bold;
+}
+
+.routeBtns:focus
+{ 
+color: red; 
+font-weight: bold;
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+</head>
+
+<body ng-app="helloworld">
+    <h1> Simple States<br><span style="color:blue;">ngRoute and ui-router in same config</span></h1>
+    <h1 style="color:red; background-color:yellow; border:double black; padding:5px;">Please don't try this at home!!</h1>
+    <div style="position:relative; top:-20px; font-size:20px;">
+        Note: Until more is known, <span style="color:blue"><b><u>I don't recommend</u></b></span>
+        using ngRoute and ui.router <br>side by side in the same config module as is done here.
+        But it works, kinda.
+    </div>
+    <br><br> 
+    
+    <div style="margin:20px 0px;"><a data-ui-sref="hello1" data-ui-sref-active="active">Hello1 from ui.router</a></div>
+    <div style="margin:20px 0px;"><a data-ui-sref="hello2" data-ui-sref-active="active">Hello2 from ui.router</a></div>
+    <div style="margin:20px 0px;"><a data-ui-sref="hello3" data-ui-sref-active="active">Hello3 from ui.router</a></div>
+    <div data-ui-view></div>
+    <br><br>
+
+    <div style="margin:20px 0px;"><a href="#/hello1" class="routeBtns">Hello1 from ngRoute</a></div>
+    <div style="margin:20px 0px;"><a href="#/hello2" class="routeBtns">Hello2 from ngRoute</a></div>
+    <div style="margin:20px 0px;"><a href="#/hello3" class="routeBtns">Hello3 from ngRoute</a></div>
+    <div ng-view></div>
+   
+<script>  
+    
+var myApp = angular.module('helloworld', ['ngRoute','ui.router']);
+
+myApp.config(['$routeProvider', '$stateProvider', function($routeProvider, $stateProvider) {
+    
+    var hello1State = {
+        name: 'hello1',
+        url: '/hello1url',
+        template: '<h3>This is the hello<span style="color:red; font-size:24px;">1</span>State via ui-router</h3>'
+    };
+
+    var hello2State = {
+        name: 'hello2',
+        url: '/hello2url',
+        template: '<h3>This is the hello<span style="color:red; font-size:24px;">2</span>State via ui-router</h3>'
+    };
+
+    var hello3State = {
+        name: 'hello3',
+        url: '/hello3url',
+        templateUrl: './extra.tmpl_Exp0.html'
+    };  
+    
+    $stateProvider.state(hello1State);
+    $stateProvider.state(hello2State);
+    $stateProvider.state(hello3State);
+    
+    
+    
+    $routeProvider
+    .when('/hello1',{    
+        template: '<h3>This is the hello<span style="color:red; font-size:24px;">1</span>State via ngRoute</h3>'
+    })
+    
+    .when('/hello2',{
+        template: '<h3>This is the hello<span style="color:red; font-size:24px;">2</span>State via ngRoute</h3>'
+    })
+
+    .when('/hello3', {
+        templateUrl: './extra.tmpl_Exp0.html'
+    });  
+
+    
+  
+}]);
+    
+</script>    
+    
+  </body>
+</html>
