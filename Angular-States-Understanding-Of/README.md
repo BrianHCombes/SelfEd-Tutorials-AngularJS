@@ -54,25 +54,26 @@ Although I started this SelfEd in Oct 2016, I am back to prep for presentation o
 
 Per the above link, the most glaring difference is **$routeProvider** only allows one view using **ng-view** but **$stateProvider** allows multiple views and nested views using **ui-view**.
 
-My favorite tutorial book: [**AngularJS Up and Running**](https://www.safaribooksonline.com/library/view/angularjs-up-and/9781491901939/)  starts off with **ngRoute** with **$routeProvider**and makes mention there are alternatives. In fact, on page 141, it mentions ngRoute is no longer part of the core AngularJS library because there are so many routing alternatives available. It then discusses the ui-router alternative on page 165.
+My favorite tutorial book: [:small_blue_diamond: **AngularJS Up and Running**](https://www.safaribooksonline.com/library/view/angularjs-up-and/9781491901939/)  starts off with **ngRoute** with **$routeProvider**and makes mention there are alternatives. In fact, on page 141, it mentions ngRoute is no longer part of the core AngularJS library because there are so many routing alternatives available. It then discusses the ui-router alternative on page 165.
 
 Since this SelfEd is about **states** I'll stick with the **ui-router** dependency which is an alternative to **ngRoute**. However, this SelfEd uses only a single view in the examples so it is likely I could also use **ngRoute** to do the same thing. For practice I used ** ngRoute _JUST NOW!_**  Rather, I added **ngRoute** along side **ui.router** and it works. See SelfEd file:
     
-[Basic-States_Exp0a.html ngRoute and ui-router in same config module](https://plnkr.co/edit/tZ2xyi8Tn3vD7DauKpMN?p=preview) (An Experiment - Avoid Otherwise) 
+[:small_blue_diamond: Basic-States_Exp0a.html ngRoute and ui-router in same config module](https://plnkr.co/edit/tZ2xyi8Tn3vD7DauKpMN?p=preview) (An Experiment - Avoid Otherwise) 
 
 It has a bit of funny behavior: when you click on a **ui.router** button it displays its view but it takes away the **ngRoute** view that was showing, But not the other way around. Otherwise, it shows you can use **ngRoute** and **ui.router** in the same config module. Until I know more, **I don't like the feel of using both together so I'll will avoid it**.
             
 I've separated the two into separate files. They are:
                 
-[Basic-States_Exp0b.html - Finite states using ngRoute](https://plnkr.co/edit/L5PndkcloCtAPt9bln5o?p=preview)    
-[Basic-States_Exp0c.html - Finite states using ui-router](https://plnkr.co/edit/ngVu8z4eEdp2dqp7hzKS?p=preview) 
+[:small_blue_diamond: Basic-States_Exp0b.html - Finite states using ngRoute](https://plnkr.co/edit/L5PndkcloCtAPt9bln5o?p=preview)    
+[:small_blue_diamond: Basic-States_Exp0c.html - Finite states using ui-router](https://plnkr.co/edit/ngVu8z4eEdp2dqp7hzKS?p=preview) 
     
 The outcomes appear identical but I recommend using ui-router for development because it has many more options and capabilites.
 
-02/10/2017:   
-Have moved on to my tutorial file < Basic-Sates_Exp1.html > which only uses the < ui-router > routing framework. See the code for the nuances and variances of using < ui-router >.
+**02/10/2017:**   
+Have moved on to my tutorial file **Basic-Sates_Exp1.html** which only uses the **ui-router** routing framework. See the code for the nuances and variances of using ** ui-router **.
 
-I do use < ui-sref > in the <a> tags and use < $state.go > in the button tags. The outcomes are the same but each seems most appropriate  for the particular tag. Here's further discussion on the differences.
+I do use **ui-sref** in the  tags and use **$state.go** > in the button tags. The outcomes are the same but each seems most appropriate  for the particular tag. Here's further discussion on the differences.
+**AH!!! There's a third way to default to a specified view**
 
 http://stackoverflow.com/questions/24526801/difference-between-ui-sref-and-state-go-in-angularjs-ui-router
 
