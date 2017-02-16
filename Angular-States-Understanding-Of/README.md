@@ -32,7 +32,22 @@ Run in Plunker | Citation / Note
                       | https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router
                       | http://ngmodules.org/modules/ui-router
                       | http://stackoverflow.com/questions/20482051/how-to-set-a-default-state-with-angular-ui-router
-                      | http://stackoverflow.com/questions/21023763/angularjs-difference-between-angular-route-and-angular-ui-router                 
+                      | http://stackoverflow.com/questions/21023763/angularjs-difference-between-angular-route-and-angular-ui-router                           | https://docs.angularjs.org/api/ng/directive/ngModel
+                      | https://docs.angularjs.org/api/ng/directive/select
+                      | https://docs.angularjs.org/api/ng/directive/ngOptions (go to the example at the end of this web page)
+                      | http://stackoverflow.com/questions/24526801/difference-between-ui-sref-and-state-go-in-angularjs-ui-router
+                      | https://www.oho.com/blog/explained-60-seconds-hash-symbols-urls-and-seo
+                      | https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router.state.$state
+                      | https://github.com/angular-ui/ui-router/wiki
+                      | https://github.com/angular-ui/ui-router/wiki/Quick-Reference
+                      | https://github.com/angular-ui/ui-router/wiki/Quick-Reference#stategoto--toparams--options
+                      | http://webdesign.about.com/od/beginningtutorials/a/aa040502a.htm                      
+                      
+                      
+                      
+                      
+                      
+                      
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 
 ### :arrow_down_small: **Learn Process:**
@@ -59,4 +74,72 @@ I've separated the two into separate files. They are:
     
 The outcomes appear identical but I recommend using ui-router for development because it has many more options and capabilites.
 
-  
+
+
+
+02/10/2017:
+    Have moved on to my tutorial file < Basic-Sates_Exp1.html > which only
+    uses the < ui-router > routing framework. See the code for the nuances 
+    and variances of using < ui-router >.
+
+    I do use < ui-sref > in the <a> tags and use < $state.go > in the
+    button tags. The outcomes are the same but each seems most appropriate 
+    for the particular tag. Here's further discussion on the differences.
+
+    < http://stackoverflow.com/questions/24526801/difference-between-ui-sref-and-state-go-in-angularjs-ui-router >
+
+    However, I decided I want to add a form element with a select tag for a 
+    drop down list. Turns out doing a drop down list in angular is different
+    and appears to be like doing ngRepeat. The problem lies in accessing the
+    name property in the select tag and sending it to the controller 
+    (in this case) I'm investigating now.
+
+    I have added a form element with a traditional drop down list using 
+    < select > but using < ng-model > to bind the user selection to the scope.
+    The ng-model API is very helpful: 
+            < https://docs.angularjs.org/api/ng/directive/ngModel 
+    
+    Also very helpful:
+
+    < https://docs.angularjs.org/api/ng/directive/select >
+    < https://docs.angularjs.org/api/ng/directive/ngOptions (go to the example at the end of this web page) >
+
+    https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router.state.$state
+
+02/13/2017
+    I finished the SelfEd file: < Basic-States_Exp1.html >. Basically
+    it covers four different state configurations using ui-router. A good 
+    chunk of the discussion is about the url parameter and how it affects
+    browser behavior and other straight forward aspects. Also worthy of mention
+    is the hash symbol. It gets inserted into the url to separate the absolute
+    url from the relative url or parameter. Here's a good discussion about
+    the hash symbol:
+    <  https://www.oho.com/blog/explained-60-seconds-hash-symbols-urls-and-seo >   
+
+    And here's a coiuple of good explanations about what a url is:
+
+    < https://www.reference.com/technology/url-80ba1ae105569ffb?qo=contentSimilarQuestions# >
+    < http://webdesign.about.com/od/beginningtutorials/a/aa040502a.htm >
+    
+    But beyond what I discuss I have not found much more about it. 
+    There must be more! Time will tell. Menawhile
+
+    Run the file: < Basic-States_Exp1.html > for the instructional content.
+
+    In the next SelfEd file: < Basic-States_Exp2.html > I will discuss
+    other ways to activate the default view without setting the url property
+    to a simple backslash.
+
+02/15/2017
+    I have finished the SelfEd file: < Basic-States_Exp2.html >. It is a 
+    simple example about using the < .run > method to initialize the default
+    state. Here are good API docs about the run method:
+
+    < https://docs.angularjs.org/guide/module > (about run blocks)
+    < https://docs.angularjs.org/api/ng/type/angular.Module >
+
+    At the end of this particular SelfEd I have an example of a 
+    nested view and and a link to my SelfEd about nested views called: 
+    < SelfEd-Angular-Nested-Views >. Run this app for the instructional
+    content.
+
