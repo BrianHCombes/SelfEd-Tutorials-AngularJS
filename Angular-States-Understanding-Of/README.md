@@ -47,10 +47,10 @@ Run in Plunker | Citation / Note
 
 ### :arrow_down_small: **Learn Process:**
 
-02/06/2017:    
+**02/06/2017:**    
 Although I started this SelfEd in Oct 2016, I am back to prep for presentation on my GitHub account. It's a challenge to determine where to begin this discussion. At this moment I'd been asking what is the difference between **$routeProvider** and **$stateProvider** when setting up routes in the config module. 
 
-[Difference between ngRoute and ui-router](http://stackoverflow.com/questions/33144690/what-is-diff-between-routeprovider-stateprovider-in-angularjs)
+[:small_blue_diamond: **Difference between ngRoute and ui-router**](http://stackoverflow.com/questions/33144690/what-is-diff-between-routeprovider-stateprovider-in-angularjs)
 
 Per the above link, the most glaring difference is **$routeProvider** only allows one view using **ng-view** but **$stateProvider** allows multiple views and nested views using **ui-view**.
 
