@@ -107,7 +107,7 @@ In the next SelfEd file: < Basic-States_Exp2.html > I will discuss other ways to
 **02/15/2017**   
 In SelfEd file: 
 
-[:small_blue_diamond:**SelfEd - Understanding States using ui-router - Other Default View Options** - _Basic-States_Exp2.html_](https://plnkr.co/edit/JBpCaIeV9BuyBtKYQCJt?p=preview)
+[:small_blue_diamond: **SelfEd - Understanding States using ui-router - Other Default View Options** - _Basic-States_Exp2.html_](https://plnkr.co/edit/JBpCaIeV9BuyBtKYQCJt?p=preview)
 
 There is a simple example about using the **.run** method to initialize the default state. Here are good API docs about the run method:
 
