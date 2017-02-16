@@ -77,13 +77,13 @@ I do use **ui-sref** in the  tags and use **$state.go** in the button tags. The 
 
 :small_blue_diamond: http://stackoverflow.com/questions/24526801/difference-between-ui-sref-and-state-go-in-angularjs-ui-router
 
-However, I decided I want to add a form element with a select tag for a drop down list. Turns out doing a drop down list in angular is different and appears to be like doing ngRepeat. I split the difference and added a traditional drop down list using select and incorporated **ng-model** to bind the user selection to the scope. This ng-model API is very helpful: 
-  [:small_blue_diamond: **ngModel API**](https://docs.angularjs.org/api/ng/directive/ngModel) 
+Meanwhile, I decided I want to add a form element with a select tag for a drop down list to look at the properties of each state. Turns out doing a drop down list in angular is different and appears to be like doing ngRepeat. I split the difference and added a traditional drop down list using select and incorporated **ng-model** to bind the user selection to the scope. The ng-model API is very helpful:    
+[:small_blue_diamond: **ngModel API**](https://docs.angularjs.org/api/ng/directive/ngModel)    
     
-Also very helpful:
+Also very helpful:   
 
-  https://docs.angularjs.org/api/ng/directive/select 
-  https://docs.angularjs.org/api/ng/directive/ngOptions (go to the example at the end of this web page)
+[:small_blue_diamond: **Angular select API**](https://docs.angularjs.org/api/ng/directive/select)    
+[:small_blue_diamond: **ngOptions API**](https://docs.angularjs.org/api/ng/directive/ngOptions (go to the example at the end of this web page)
 
   https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router.state.$state
 
