@@ -58,14 +58,14 @@ My favorite tutorial book: [:small_blue_diamond: **AngularJS Up and Running**](h
 
 Since this SelfEd is about **states** I'll stick with the **ui-router** dependency which is an alternative to **ngRoute**. However, this SelfEd uses only a single view in the examples so it is likely I could also use **ngRoute** to do the same thing. For practice I used ** ngRoute _JUST NOW!_**  Rather, I added **ngRoute** along side **ui.router** and it works. See SelfEd file:
     
-[:small_blue_diamond: Basic-States_Exp0a.html ngRoute and ui-router in same config module](https://plnkr.co/edit/tZ2xyi8Tn3vD7DauKpMN?p=preview) (An Experiment - Avoid Otherwise) 
+[:small_blue_diamond: SelfEd - Basic-States_Exp0a.html ngRoute and ui-router in same config module](https://plnkr.co/edit/tZ2xyi8Tn3vD7DauKpMN?p=preview) (An Experiment - Avoid Otherwise) 
 
 It has a bit of funny behavior: when you click on a **ui.router** button it displays its view but it takes away the **ngRoute** view that was showing, But not the other way around. Otherwise, it shows you can use **ngRoute** and **ui.router** in the same config module. Until I know more, **I don't like the feel of using both together so I'll will avoid it**.
             
 I've separated the two into separate files. They are:
                 
-[:small_blue_diamond: Basic-States_Exp0b.html - Finite states using ngRoute](https://plnkr.co/edit/L5PndkcloCtAPt9bln5o?p=preview)    
-[:small_blue_diamond: Basic-States_Exp0c.html - Finite states using ui-router](https://plnkr.co/edit/ngVu8z4eEdp2dqp7hzKS?p=preview) 
+[:small_blue_diamond: SelfEd - Basic-States_Exp0b.html - Finite states using ngRoute](https://plnkr.co/edit/L5PndkcloCtAPt9bln5o?p=preview)    
+[:small_blue_diamond: SelfEd - Basic-States_Exp0c.html - Finite states using ui-router](https://plnkr.co/edit/ngVu8z4eEdp2dqp7hzKS?p=preview) 
     
 The outcomes appear identical but I recommend using ui-router for development because it has many more options and capabilites.
 
@@ -99,7 +99,7 @@ And here's a couple of good explanations about what a url is:
     
 But beyond what I discuss I have not found much more about it. There must be more! Time will tell. Meanwhile run the file:   
 
-[:small_blue_diamond:**Understanding States using ui-router** - _Basic-States_Exp1.html_](https://plnkr.co/edit/910949PUN6V5uX5lswEa?p=preview) for the instructional content.
+[:small_blue_diamond:** SelfEd - Understanding States using ui-router** - _Basic-States_Exp1.html_](https://plnkr.co/edit/910949PUN6V5uX5lswEa?p=preview) for the instructional content.
 
 In the next SelfEd file: < Basic-States_Exp2.html > I will discuss other ways to activate the default view without setting the url property to a simple backslash.   
 **AH!!! There's a third way to default to a specified view** [:small_blue_diamond: **3 Default Ways**](https://github.com/angular-ui/ui-router/wiki)
@@ -107,7 +107,7 @@ In the next SelfEd file: < Basic-States_Exp2.html > I will discuss other ways to
 **02/15/2017**   
 In SelfEd file: 
 
-[:small_blue_diamond:**Understanding States using ui-router - Other Default View Options** - _Basic-States_Exp2.html_](https://plnkr.co/edit/JBpCaIeV9BuyBtKYQCJt?p=preview)
+[:small_blue_diamond:**SelfEd - Understanding States using ui-router - Other Default View Options** - _Basic-States_Exp2.html_](https://plnkr.co/edit/JBpCaIeV9BuyBtKYQCJt?p=preview)
 
 There is a simple example about using the **.run** method to initialize the default state. Here are good API docs about the run method:
 
@@ -115,5 +115,5 @@ There is a simple example about using the **.run** method to initialize the defa
 :small_blue_diamond: https://docs.angularjs.org/api/ng/type/angular.Module 
 
 At the end of this particular SelfEd I have an example of a nested view and and a link to my SelfEd about nested views called: 
-[:small_blue_diamond: **Angular-Nested-Views**](https://github.com/BrianHCombes/SelfEd-Tutorials-AngularJS/tree/master/Angular-Nested-Views).
+[:small_blue_diamond: **SelfEd - Angular-Nested-Views**](https://github.com/BrianHCombes/SelfEd-Tutorials-AngularJS/tree/master/Angular-Nested-Views).
 
