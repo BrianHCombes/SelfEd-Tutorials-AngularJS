@@ -43,11 +43,6 @@ Run in Plunker | Citation / Note
                       | https://github.com/angular-ui/ui-router/wiki/Quick-Reference#stategoto--toparams--options
                       | http://webdesign.about.com/od/beginningtutorials/a/aa040502a.htm                      
                       
-                      
-                      
-                      
-                      
-                      
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 
 ### :arrow_down_small: **Learn Process:**
@@ -74,28 +69,16 @@ I've separated the two into separate files. They are:
     
 The outcomes appear identical but I recommend using ui-router for development because it has many more options and capabilites.
 
-
-
-
 02/10/2017:
-    Have moved on to my tutorial file < Basic-Sates_Exp1.html > which only
-    uses the < ui-router > routing framework. See the code for the nuances 
-    and variances of using < ui-router >.
+Have moved on to my tutorial file < Basic-Sates_Exp1.html > which only uses the < ui-router > routing framework. See the code for the nuances and variances of using < ui-router >.
 
-    I do use < ui-sref > in the <a> tags and use < $state.go > in the
-    button tags. The outcomes are the same but each seems most appropriate 
-    for the particular tag. Here's further discussion on the differences.
+I do use < ui-sref > in the <a> tags and use < $state.go > in the button tags. The outcomes are the same but each seems most appropriate  for the particular tag. Here's further discussion on the differences.
 
-    < http://stackoverflow.com/questions/24526801/difference-between-ui-sref-and-state-go-in-angularjs-ui-router >
+http://stackoverflow.com/questions/24526801/difference-between-ui-sref-and-state-go-in-angularjs-ui-router
 
-    However, I decided I want to add a form element with a select tag for a 
-    drop down list. Turns out doing a drop down list in angular is different
-    and appears to be like doing ngRepeat. The problem lies in accessing the
-    name property in the select tag and sending it to the controller 
-    (in this case) I'm investigating now.
+However, I decided I want to add a form element with a select tag for a drop down list. Turns out doing a drop down list in angular is different and appears to be like doing ngRepeat. The problem lies in accessing the name property in the select tag and sending it to the controller (in this case) I'm investigating now.
 
-    I have added a form element with a traditional drop down list using 
-    < select > but using < ng-model > to bind the user selection to the scope.
+I have added a form element with a traditional drop down list using < select > but using < ng-model > to bind the user selection to the scope.
     The ng-model API is very helpful: 
             < https://docs.angularjs.org/api/ng/directive/ngModel 
     
