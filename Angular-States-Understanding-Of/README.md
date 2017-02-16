@@ -73,7 +73,7 @@ The outcomes appear identical but I recommend using ui-router for development be
 Have moved on to my tutorial file **Basic-Sates_Exp1.html** which only uses the **ui-router** routing framework. See the code for the nuances and variances of using ** ui-router **.
 
 I do use **ui-sref** in the  tags and use **$state.go** in the button tags. The outcomes are the same but each seems most appropriate  for the particular tag. Here's further discussion on the differences.  
-**AH!!! There's a third way to default to a specified view** [:small_blue_diamond: **3 Default Ways**](https://github.com/angular-ui/ui-router/wiki)
+
 
 :small_blue_diamond: http://stackoverflow.com/questions/24526801/difference-between-ui-sref-and-state-go-in-angularjs-ui-router
 
@@ -88,21 +88,23 @@ Also very helpful:
 
   https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router.state.$state
 
-02/13/2017   
-I finished the SelfEd file: < Basic-States_Exp1.html >. Basically it covers four different state configurations using ui-router. A good chunk of the discussion is about the url parameter and how it affects browser behavior and other straight forward aspects. Also worthy of mention is the hash symbol. It gets inserted into the url to separate the absolute url from the relative url or parameter. Here's a good discussion about the hash symbol:
-    <  https://www.oho.com/blog/explained-60-seconds-hash-symbols-urls-and-seo >   
+**02/13/2017**   
+I finished (it's never finished) the SelfEd file: **Basic-States_Exp1.html** Basically it covers four different state configurations using ui-router. A good chunk of the discussion is about the url parameter and how it affects browser behavior. Also worthy of mention is the hash symbol. It gets inserted into the url to separate the absolute url from the relative url or parameter. Here's a good discussion about the hash symbol:
+    
+[:small_blue_diamond: **The role of a Hash symbol in a url**](https://www.oho.com/blog/explained-60-seconds-hash-symbols-urls-and-seo)
 
 And here's a couple of good explanations about what a url is:
 
-    < https://www.reference.com/technology/url-80ba1ae105569ffb?qo=contentSimilarQuestions# >
-    < http://webdesign.about.com/od/beginningtutorials/a/aa040502a.htm >
+[:small_blue_diamond: **Take 1 - What is a url?**](https://www.reference.com/technology/url-80ba1ae105569ffb?qo=contentSimilarQuestions#)
+[:small_blue_diamond: **Take 2 - What is a url?**](http://webdesign.about.com/od/beginningtutorials/a/aa040502a.htm)
     
 But beyond what I discuss I have not found much more about it. There must be more! Time will tell. Meanwhile run the file: 
-  < Basic-States_Exp1.html > for the instructional content.
+[:small_blue_diamond:**Understanding States using ui-router** - _Basic-States_Exp1.html_](https://plnkr.co/edit/910949PUN6V5uX5lswEa?p=preview) for the instructional content.
 
-In the next SelfEd file: < Basic-States_Exp2.html > I will discuss other ways to activate the default view without setting the url property to a simple backslash.
+In the next SelfEd file: < Basic-States_Exp2.html > I will discuss other ways to activate the default view without setting the url property to a simple backslash.   
+**AH!!! There's a third way to default to a specified view** [:small_blue_diamond: **3 Default Ways**](https://github.com/angular-ui/ui-router/wiki)
 
-02/15/2017   
+**02/15/2017**   
 I have finished the SelfEd file: < Basic-States_Exp2.html >. It is a simple example about using the < .run > method to initialize the default state. Here are good API docs about the run method:
 
     < https://docs.angularjs.org/guide/module > (about run blocks)
