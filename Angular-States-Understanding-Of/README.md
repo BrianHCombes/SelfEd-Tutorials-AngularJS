@@ -99,7 +99,7 @@ And here's a couple of good explanations about what a url is:
     
 But beyond what I discuss I have not found much more about it. There must be more! Time will tell. Meanwhile run the file:   
 
-[:small_blue_diamond: ** SelfEd - Understanding States using ui-router** - _Basic-States_Exp1.html_](https://plnkr.co/edit/910949PUN6V5uX5lswEa?p=preview) for the instructional content.
+[:small_blue_diamond: **SelfEd - Understanding States using ui-router** - _Basic-States_Exp1.html_](https://plnkr.co/edit/910949PUN6V5uX5lswEa?p=preview) for the instructional content.
 
 In the next SelfEd file: < Basic-States_Exp2.html > I will discuss other ways to activate the default view without setting the url property to a simple backslash.   
 **AH!!! There's a third way to default to a specified view** [:small_blue_diamond: **3 Default Ways**](https://github.com/angular-ui/ui-router/wiki)
