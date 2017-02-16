@@ -116,5 +116,5 @@ There is a simple example about using the **.run** method to initialize the defa
 
 At the end of this particular SelfEd I have an example of a nested view and and a link to my SelfEd about nested views called: 
 
-[**SelfEd-Angular-Nested-Views**](https://github.com/BrianHCombes/SelfEd-Tutorials-AngularJS/tree/master/Angular-Nested-Views).
+[**AngularJS-Nested-Views**](https://github.com/BrianHCombes/SelfEd-Tutorials-AngularJS/tree/master/Angular-Nested-Views).
 
