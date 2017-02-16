@@ -72,8 +72,8 @@ The outcomes appear identical but I recommend using ui-router for development be
 **02/10/2017:**   
 Have moved on to my tutorial file **Basic-Sates_Exp1.html** which only uses the **ui-router** routing framework. See the code for the nuances and variances of using ** ui-router **.
 
-I do use **ui-sref** in the  tags and use **$state.go** > in the button tags. The outcomes are the same but each seems most appropriate  for the particular tag. Here's further discussion on the differences.
-**AH!!! There's a third way to default to a specified view**
+I do use **ui-sref** in the  tags and use **$state.go** > in the button tags. The outcomes are the same but each seems most appropriate  for the particular tag. Here's further discussion on the differences.  
+**AH!!! There's a third way to default to a specified view** [**3 Default Ways**](https://github.com/angular-ui/ui-router/wiki)
 
 http://stackoverflow.com/questions/24526801/difference-between-ui-sref-and-state-go-in-angularjs-ui-router
 
