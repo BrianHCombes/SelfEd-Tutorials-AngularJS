@@ -74,7 +74,6 @@ Have moved on to my tutorial file **Basic-Sates_Exp1.html** which only uses the 
 
 I do use **ui-sref** in the  tags and use **$state.go** in the button tags. The outcomes are the same but each seems most appropriate  for the particular tag. Here's further discussion on the differences.  
 
-
 :small_blue_diamond: http://stackoverflow.com/questions/24526801/difference-between-ui-sref-and-state-go-in-angularjs-ui-router
 
 Meanwhile, I decided I want to add a form element with a select tag for a drop down list to look at the properties of each state. Turns out doing a drop down list in angular is different and appears to be like doing ngRepeat. I split the difference and added a traditional drop down list using select and incorporated **ng-model** to bind the user selection to the scope. The ng-model API is very helpful: 
@@ -95,20 +94,25 @@ I finished (it's never finished) the SelfEd file: **Basic-States_Exp1.html** Bas
 
 And here's a couple of good explanations about what a url is:
 
-[:small_blue_diamond: **Take 1 - What is a url?**](https://www.reference.com/technology/url-80ba1ae105569ffb?qo=contentSimilarQuestions#)
+[:small_blue_diamond: **Take 1 - What is a url?**](https://www.reference.com/technology/url-80ba1ae105569ffb?qo=contentSimilarQuestions#)   
 [:small_blue_diamond: **Take 2 - What is a url?**](http://webdesign.about.com/od/beginningtutorials/a/aa040502a.htm)
     
-But beyond what I discuss I have not found much more about it. There must be more! Time will tell. Meanwhile run the file: 
+But beyond what I discuss I have not found much more about it. There must be more! Time will tell. Meanwhile run the file:   
+
 [:small_blue_diamond:**Understanding States using ui-router** - _Basic-States_Exp1.html_](https://plnkr.co/edit/910949PUN6V5uX5lswEa?p=preview) for the instructional content.
 
 In the next SelfEd file: < Basic-States_Exp2.html > I will discuss other ways to activate the default view without setting the url property to a simple backslash.   
 **AH!!! There's a third way to default to a specified view** [:small_blue_diamond: **3 Default Ways**](https://github.com/angular-ui/ui-router/wiki)
 
 **02/15/2017**   
-I have finished the SelfEd file: < Basic-States_Exp2.html >. It is a simple example about using the < .run > method to initialize the default state. Here are good API docs about the run method:
+In SelfEd file: 
 
-    < https://docs.angularjs.org/guide/module > (about run blocks)
-    < https://docs.angularjs.org/api/ng/type/angular.Module >
+[:small_blue_diamond:**Understanding States using ui-router - Other Default View Options** - _Basic-States_Exp2.html_](https://plnkr.co/edit/JBpCaIeV9BuyBtKYQCJt?p=preview)
 
-At the end of this particular SelfEd I have an example of a nested view and and a link to my SelfEd about nested views called:          < SelfEd-Angular-Nested-Views >. Run this app for the instructional content.
+There is a simple example about using the **.run** method to initialize the default state. Here are good API docs about the run method:
+
+:small_blue_diamond: https://docs.angularjs.org/guide/module  (about run blocks)     
+:small_blue_diamond: https://docs.angularjs.org/api/ng/type/angular.Module 
+
+At the end of this particular SelfEd I have an example of a nested view and and a link to my SelfEd about nested views called:          **SelfEd-Angular-Nested-Views**. Run this app for the instructional content.
 
