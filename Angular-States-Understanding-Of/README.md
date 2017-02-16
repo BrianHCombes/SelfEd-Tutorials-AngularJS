@@ -1,6 +1,6 @@
 ### **_My 'SelfEd' Code Diaries_**
 #**AngularJS - _Understanding States_**
-Run in Plunker | Citation / Note
+SelfEds to run in Plunker | Citation / Note
 ----------------------------------------------------------------------------|--------------------------------------------------------
 [:small_blue_diamond:**ngRoute and ui-router in same config module** - _Basic-States_Exp0a.html_](https://plnkr.co/edit/tZ2xyi8Tn3vD7DauKpMN?p=preview)| **It can't be good!**       
 [:small_blue_diamond:**Finite States using ngRoute** - _Basic-States_Exp0b.html_](https://plnkr.co/edit/L5PndkcloCtAPt9bln5o?p=preview) | 
