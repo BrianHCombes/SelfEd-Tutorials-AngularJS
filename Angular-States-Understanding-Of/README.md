@@ -115,5 +115,5 @@ There is a simple example about using the **.run** method to initialize the defa
 :small_blue_diamond: https://docs.angularjs.org/api/ng/type/angular.Module 
 
 At the end of this particular SelfEd I have an example of a nested view and and a link to my SelfEd about nested views called: 
-[**Angular-Nested-Views**](https://github.com/BrianHCombes/SelfEd-Tutorials-AngularJS/tree/master/Angular-Nested-Views).
+[:small_blue_diamond: **Angular-Nested-Views**](https://github.com/BrianHCombes/SelfEd-Tutorials-AngularJS/tree/master/Angular-Nested-Views).
 
