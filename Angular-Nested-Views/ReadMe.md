@@ -43,7 +43,7 @@ Run in Plunker | Citation / Note
        
 
   **Various Template Source Techniques**   
-  I like knowing all the possible ways to achieve the same thing. So aside from nesting the views, I have sourced the HTML templates in three different ways via **cached template, separate file template, and by direct template** 
+  I like knowing all the possible ways to achieve the same thing. So aside from nesting the views, I have sourced the HTML templates in three different ways via **cached template, separate file template, and by direct template.** 
  
   **Various Controller Instantiations**   
   I have also successfully declared a controller instance in three different ways for the various views. Notably, the two controller instances declared in the view configuration objects as defined in the configuration module and the one controller instance declared in one of the views itself.
