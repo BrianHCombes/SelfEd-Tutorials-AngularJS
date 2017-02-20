@@ -42,11 +42,11 @@ Run in Plunker | Citation / Note
   About what I call the **"default view "chain":** In this example there are multiple nested views that all appear as default views upon page load. All the default view(s) up the sibling chain will show until the first defined url with a backslash is encountered. So if a view has a backslash for its url and that view is a child of a child of a root view, then all the views from the child through the root will show.
        
 
-  **Various Template Source Techniques**
+  **Various Template Source Techniques**   
   I like knowing all the possible ways to achieve the same thing. So aside from nesting the views, I have sourced the HTML templates in three different ways via **cached template, separate file template, and by direct template** 
  
-  **Various Controller Instantiations**
+  **Various Controller Instantiations**   
   I have also successfully declared a controller instance in three different ways for the various views. Notably, the two controller instances declared in the view configuration objects as defined in the configuration module and the one controller instance declared in one of the views itself.
   
-- 02/19/2017
+- 02/19/2017   
     There is notable mention when you run the program. View 3 has a button to click so you can see the template contents of view 3. To make this work I had to create a fourth view because I needed a background to put the html text of view 3's template onto. Prior, I tried to use ng-show but that involved using a child scope to set a parent scope which doesn't work. So watch out for this trap.
