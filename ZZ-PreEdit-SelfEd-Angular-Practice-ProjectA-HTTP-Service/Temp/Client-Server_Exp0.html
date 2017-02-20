@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- This file is a member of SelfEd: < SelfEd-Angular-Practice-ProjectA-HTTP-Service > -->
+<!--
+Ironically, the project has started with a first objective of generating a menu
+of buttons using ng-repeat and then being able to register which button has been
+clicked. 
+-->
+<html>
+<head>
+    <title>SelfEd - Practice Project</title>
+    <link rel="SHORTCUT ICON" href=support/teacher.png>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    
+<style>
+
+body
+{
+margin-left: auto;
+margin-right: auto;
+width: 960px;
+}
+    
+#mainMessage
+{
+color:blue;
+font-size:30px;
+width:800px;
+}
+    
+    
+button
+{
+font-size:20px;
+color:red;
+width:300px;
+height:50px;
+cursor:pointer;
+}    
+
+#func2
+{
+font-size:30px;
+color:blue;
+}
+
+</style>    
+</head>
+
+<body ng-app="imageApp">
+    
+    <div id="mainMessage" ng-controller="ImageCtrl as imageCtrl">
+                
+        <div ng-repeat="List2 in imageCtrl.list2">
+            <button ng-click="imageCtrl.listFunction2(List2.file)">{{List2.label}}</button> 
+        </div> 
+        <div>List2 id# received from clicked button is: <span style="color:red;">{{imageCtrl.funcMsg2}}</span></div>
+        
+    </div>
+    
+    <script>
+        
+        angular.module("imageApp",[])
+        .controller("ImageCtrl", ['$http', function($http){
+            var iCtrlVar = this;
+            
+            iCtrlVar.mainMsg =  "This is a demonstration using ng-repeat to display a menu of buttons. " +
+                                "Upon clicking a button, the button's ID is sent back to the controller for processing.";
+            
+            iCtrlVar.list2 = [  {id:6, file:"support/imageGroup6.html", label:"button 6"},
+                                {id:7, file:"support/imageGroup7.html", label:"button 7"},
+                                {id:8, file:"support/imageGroup8.html", label:"button 8"},
+                                {id:9, file:"support/imageGroup9.html", label:"button 9"},
+                                {id:10, file:"support/imageGroup10.html", label:"button 10"}];
+            
+            iCtrlVar.listFunction2 = function(btnClicked){
+                iCtrlVar.funcMsg2 = btnClicked;
+            }
+        }]);
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+01/04/2017
+Ironically, the project has started with a first objective of generating a menu
+of buttons using ng-repeat and then being able to register which button has been
+clicked. 
+
+This is a working example of a NON Angular button menu.
+
+Note: See file: < Client-Server_Exp1.html > for a working Angular example.
+-->
+<html>
+<head>
+    <title>SelfEd – Name of SelfEd</title>
+    <link rel="SHORTCUT ICON" href=support/teacher.png>
+    
+<style>
+    
+.bunch, #msg
+{
+/* height:50px; */
+font-size:20px;
+padding: 20px 40px 20px 40px;
+    
+}
+
+</style>    
+</head>    
+    
+<body>
+
+    <div style="margin-left:auto; margin-right:auto; width:960px;">
+        <button class="bunch" value=1 onclick="alert1(0)"></button><br><br>
+        <button class="bunch" value=2 onclick="alert1(1)"></button><br><br>
+        <button class="bunch" value=3 onclick="alert1(2)"></button><br><br>
+        <button class="bunch" value=4 onclick="alert1(3)"></button><br><br>
+        <button class="bunch" value=5 onclick="alert1(4)"></button><br><br>
+        <br><br>
+        <div id="msg" style="background-color:yellow; border:2px solid black; border-radius:10px;"></div>
+        
+    </div>
+    
+
+
+<script>
+    
+// http://html.net/forums/viewtopic.php?f=65&t=4828    
+// http://www.w3schools.com/jquery/event_target.asp
+
+
+var innerHTMLArray = ["Click Me 1!", "Click Me 2!", "Click Me 3!", "Click Me 4!", "Click Me 5!"];
+
+for(i = 0; i < innerHTMLArray.length; i++){
+    document.getElementsByClassName("bunch")[i].innerHTML = innerHTMLArray[i];
+}
+
+
+
+function alert1(btnClicked){
+    
+        var bunchLength = document.getElementsByClassName("bunch").length;
+       // alert(bunchLength);
+        for(i = 0; i < bunchLength; i++){
+            document.getElementsByClassName("bunch")[i].style = "color:black;";
+        }
+        document.getElementsByClassName("bunch")[btnClicked].style = "color:red;";
+        
+        document.getElementById("msg").innerHTML = "Button clicked is: " + document.getElementsByClassName("bunch")[btnClicked].innerHTML;
+}    
+</script>    
+ 
+</body>
+</html>

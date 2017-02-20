@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+01/04/2017
+Ironically, the project has started with a first objective of generating a menu
+of buttons using ng-repeat and then being able to register which button has been
+clicked. 
+
+This is a working example.
+
+Note: See file: < Client-Server_Exp1_1.html > for a non Angular example.
+-->
+<html>
+<head>
+    <title>SelfEd - Practice Project</title>
+    <link rel="SHORTCUT ICON" href=support/teacher.png>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    
+<style>
+
+body
+{
+margin-left: auto;
+margin-right: auto;
+width: 960px;
+}
+    
+#mainMessage
+{
+color:blue;
+font-size:30px;
+width:800px;
+}
+    
+button
+{
+font-size:20px;
+color:red;
+width:300px;
+height:50px;
+cursor:pointer;
+}    
+
+#func2
+{
+font-size:30px;
+color:blue;
+}
+
+</style>    
+</head>
+
+<body ng-app="imageApp">
+    
+    <div id="mainMessage" ng-controller="ImageCtrl as imageCtrl">
+        <span style="color:red; font-size:48px;">Creating buttons with ng-repeat</span><br>
+        {{imageCtrl.mainMsg}}<br><br>
+        <div ng-repeat="List1 in imageCtrl.list1">
+            <button ng-click="imageCtrl.listFunction1(List1)">{{List1}}</button> 
+        </div>    
+        <div>List1 argument received from clicked button is: <span style="color:red;">{{imageCtrl.funcMsg1}}</span></div>
+        <br><br><br>
+        
+        <div ng-repeat="List2 in imageCtrl.list2">
+            <button ng-click="imageCtrl.listFunction2(List2.id)">{{List2.label}}</button> 
+        </div> 
+        <div>List2 is an array of objects and the id# received from the clicked button is: <span style="color:red;">{{imageCtrl.funcMsg2}}</span></div>
+    </div>
+    
+    <script>
+        
+        angular.module("imageApp",[])
+        .controller("ImageCtrl", [function(){
+            var iCtrlVar = this;
+            
+            iCtrlVar.mainMsg =  "This is a demonstration using ng-repeat to display a menu of buttons. " +
+                                "Upon clicking a button, the button's ID is sent back to the controller for processing.";
+            
+            iCtrlVar.list1 = ["button 1","button 2","button 3","button 4","button 5"];
+            
+            iCtrlVar.list2 = [  {id:6, label:"button 6"},
+                                {id:7, label:"button 7"},
+                                {id:8, label:"button 8"},
+                                {id:9, label:"button 9"},
+                                {id:10, label:"button 10"}];
+            
+            iCtrlVar.listFunction1 = function(btnClicked){
+                iCtrlVar.funcMsg1 = btnClicked;
+            }
+            
+            iCtrlVar.listFunction2 = function(btnClicked){
+                iCtrlVar.funcMsg2 = btnClicked;
+            }
+        }]);
+        
+    </script>
+    
+</body>
+</html>
