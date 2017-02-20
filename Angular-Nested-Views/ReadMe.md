@@ -31,10 +31,10 @@ Run in Plunker | Citation / Note
 
 ### :arrow_down_small: **Learn Process:**
 
-- 11/01/2016     
+- 11/01/2016    
 Had finished this but have returned on 11/16/2017 to tidy it up for GitHub
     
-  In the process of posting SelfEd: [:small_blue_diamond:**SelfEd-Angular-States-Understanding-Of**](https://github.com/BrianHCombes/SelfEd-Tutorials-    AngularJS/tree/master/Angular-States-Understanding-Of) on GitHub I picked up additional understandings of states. 
+In the process of posting SelfEd: [:small_blue_diamond:**SelfEd-Angular-States-Understanding-Of**](https://github.com/BrianHCombes/SelfEd-Tutorials-AngularJS/tree/master/Angular-States-Understanding-Of) on GitHub I picked up additional understandings of states. 
 
 At first glance it must be noted:
 
