@@ -1,0 +1,183 @@
+<!-- This file is a member of SelfEd: < SelfEd-Angular-API-Directive-ngShow > -->
+<!DOCTYPE html>
+<!--
+This SelfEd is reasonably self evident in its workings. The basic objective is
+to simply use ng-show to show and hide stuff. 
+-->
+<html ng-app="showApp">
+<head>
+    <title>SelfEd - Setting ng-show by function</title>
+    <link rel="SHORTCUT ICON" href=support/teacher-icon.png>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>   
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+<style>
+
+button
+{
+font-size:30px;
+padding:20px;
+}    
+
+#toggle
+{
+width:600px;    
+background-color:cyan;
+color:red;
+font-size:20px;
+border: 2px solid black;
+border-radius: 10px;
+padding:10px 10px 10px 10px;
+}
+    
+img
+{
+width:300px;    
+}
+    
+</style>    
+    
+</head>
+<body ng-controller="showCtrl as sCtrl">
+    
+    
+    <div>
+        <div style="color:Red; font-size:24px; font-weight:Bold;">
+            {{sCtrl.selfEdTitle}}
+        </div>    
+            <br><br>
+            <div style="color:green; font-size:24px;">If you see a yellow box below with text, the state's three ui-views are showing.</div>
+            <div data-ui-view ng-show='sCtrl.showBooleanVar'>This is the ui-view</div>
+            <br><br>
+            
+            <button ng-click="sCtrl.hideShowDiv()">
+                (Example 1) Click to hide yellow box &nbsp;&nbsp;&nbsp;&nbsp; 
+                <span style="font-size:20px; color:red;">(with its root view and two nested views - see Code Block BBB)</span>
+            </button>
+            <br><br>
+            <button ng-click="sCtrl.showShowDiv()">
+                (Example 1) Click to show yellow box &nbsp;&nbsp;&nbsp;&nbsp; 
+                <span style="font-size:20px; color:red;">(with its root view and two nested views - see Code Block BBB)</span>
+            </button>
+            <br><br>
+            
+            <!-- Code Block AAA -->
+            <button ng-click="showText = !showText" style="float:left;">
+                (Example 2) Click to Toggle Text On and Off &nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="font-size:20px; color:red;">(see Code Block AAA)</span>
+            </button>
+            <div id="toggle" ng-show="showText"style="float:left; margin-left:20px;">
+                This text toggles on and off via a directive variable called "showText." 
+                Amazingly, the variable is local only to the button element that activates 
+                the toggling and this div showing the text. See Code Block AAA for details.
+            </div>
+            <div style="clear:left;"></div><br><br>
+            
+            <!-- Code Block CCC -->
+                <span style="font-size:20px; color:blue;">
+                    (Example 3) Enter (cat, dog, lion, bear, turtle) to get image
+                    <span style="color:red;">(see Code Block CCC)</span>
+                </span>
+                <input type="text" ng-model="animal" style="height:50px;">
+                <img ng-src="http://i.imgur.com/vkW3Lhe.jpg" ng-show="animal == 'cat'">
+                <img ng-src="http://i.imgur.com/gjLSTqX.jpg" ng-show="animal == 'dog'">
+                <img ng-src="http://i.imgur.com/bE17tmf.jpg" ng-show="animal == 'lion'">
+                <img ng-src="http://i.imgur.com/ICGkjN3.png" ng-show="animal == 'bear'">
+                <img ng-src="http://i.imgur.com/Zpf1dBi.jpg" ng-show="animal == 'turtle'">
+            <div style="clear:left;"></div><br><br>
+             
+            <!-- Code Block DDD -->
+            <div ng-repeat="buttons in sCtrl.Buttons"  style="width:1450px;">
+                <button ng-click="showStatus2 = !showStatus2" style="width:250px; padding:0px 20px 0px 20px;">{{buttons.btnName}}</button>
+                <div ng-show="showStatus2" style="float:right; font-size:30px; color:red;">{{buttons.instB}}</div>    
+            </div>  
+            <br><br>
+            <div ng-repeat="buttons in sCtrl.Buttons"  style="position:relative;">
+                <button ng-click="showStatus2 = !showStatus2" style="float:left; width:250px; padding:0px 20px 0px 20px;">{{buttons.btnName}}</button>
+                <div ng-show="showStatus2" style="position:absolute; left:1300px; font-size:24px; color:red;">{{buttons.instA}}</div>    
+            </div> 
+                
+                <div style="clear:left;"></div>
+    </div>
+        
+<script>
+var show = angular.module('showApp',['ui.router'])
+
+
+    show.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+        $urlRouterProvider.otherwise('/');
+        var show1Obj = {
+            name: 'show1Name',
+            //url: '/'
+            // Code Block BBB
+            template: 
+                '<div style="width:1200px; padding:10px 20px; background-color:#FFFF00; border:2px solid black; border-radius:10px;">' +
+                    '<h3> This is the ui-view of a locally defined template. It is defined and sourced as the template property of the this state\'s definition</h3>' +
+                    '<div data-ui-view="showView2">showView2 should be here</div>' +
+                    '<div data-ui-view="showView3">showView3 should be here</div>' +
+                '</div>',
+        }
+        $stateProvider.state(show1Obj);
+
+
+        var show2Obj = {
+            name: 'show2Name',
+            url: '/',
+            parent: 'show1Name',
+            views: {
+
+                'showView2': {templateUrl: 'showCachedTemplate'},   //SelfEd Note: The " ./ " is not needed for a cached template and won't work if you do use it. 
+
+                'showView3': {templateUrl: './show1.tmpl.html'}      //SelfEd Note: The " ./ " is optional for a separate html template file assuming the file is in the same directory as the index file. 
+            }
+        }
+        $stateProvider.state(show2Obj);
+    }])
+
+
+
+    show.controller('showCtrl', [ function(){
+
+        var showController = this;
+
+        showController.selfEdTitle = 
+            "SelfEd - ngShow. There are three different examples of ngShow here," +
+            "The first example uses functions, the second applies Boolean, " +
+            "and the third uses conditionals.";
+
+        var showBooleanVar = true;
+
+        showController.showBooleanVar = showBooleanVar;
+
+        showController.hideShowDiv = function(){
+            showController.showBooleanVar = false;
+        }
+
+        showController.showShowDiv = function(){
+            showController.showBooleanVar = true;
+        }
+        
+        showController.Buttons = [
+                {btnName:"btn1 - click me", instA:"Click on Click off 1 - See Code Block DDD", instB:"Click on Click off 1 - Controller is not used with this ngShow operation - see code Block DDD"},
+                {btnName:"btn2 - click me", instA:"Click on Click off 2 - See Code Block DDD", instB:"Click on Click off 2 - Controller is not used with this ngShow operation - see code Block DDD"},
+                {btnName:"btn3 - click me", instA:"Click on Click off 3 - See Code Block DDD", instB:"Click on Click off 3 - Controller is not used with this ngShow operation - see code Block DDD"},
+                {btnName:"btn4 - click me", instA:"Click on Click off 4 - See Code Block DDD", instB:"Click on Click off 4 - Controller is not used with this ngShow operation - see code Block DDD"},
+                {btnName:"btn5 - click me", instA:"Click on Click off 5 - See Code Block DDD", instB:"Click on Click off 5 - Controller is not used with this ngShow operation - see code Block DDD"},
+        ];
+    }])
+
+</script>
+
+<script type="text/ng-template" id="showCachedTemplate">
+    <div style="color:red;">
+    <h3>This is a cached ui-view template named showCachedTemplate. It is sourced with the templateUrl property of this state's definition.</h3>
+    </div>
+</script>
+
+
+
+</body>
+</html>
