@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!-- This file is a member of SelfEd: < SelfEd-Angular-ngRepeat-Creating-Button-Menu -->
+<!--
+01/04/2017
+Button menu using ngRepeat.
+-->
+<html>
+<head>
+    <title>SelfEd - AngularJS ngRepeat - Button Menu</title>
+    <link rel="SHORTCUT ICON" href=support/teacher.png>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    
+<style>
+
+body
+{
+margin-left: auto;
+margin-right: auto;
+width: 960px;
+}
+    
+#mainMessage
+{
+color:blue;
+font-size:30px;
+width:800px;
+}
+    
+button
+{
+font-size:20px;
+color:red;
+width:300px;
+height:50px;
+cursor:pointer;
+}    
+
+#func2
+{
+font-size:30px;
+color:blue;
+}
+
+</style>    
+</head>
+
+<body ng-app="imageApp">
+    
+    <div id="mainMessage" ng-controller="ImageCtrl as imageCtrl">
+        <span style="color:red; font-size:48px;">Creating buttons with ng-repeat</span><br>
+        {{imageCtrl.mainMsg}}<br><br>
+        
+        <div style="font-size:30px; color:black;">Button Menu 1</div>
+        <div ng-repeat="List1 in imageCtrl.list1">
+            <button ng-click="imageCtrl.listFunction1(List1)">{{List1}}</button> 
+        </div>    
+        <div>   Button menu 1 is created from an array of the button names and the 
+                argument received from the clicked (click one) button is: 
+                <span style="color:red;">{{imageCtrl.funcMsg1}}</span>
+        </div>
+        <br><br><br>
+        
+        <div style="font-size:30px; color:black;">Button Menu 2</div>
+        <div ng-repeat="List2 in imageCtrl.list2">
+            <button ng-click="imageCtrl.listFunction2(List2.id)">{{List2.label}}</button> 
+        </div> 
+        <div>   Button menu 2 is created from an array of objects and the id# 
+                received from the clicked (click one) button is: 
+                <span style="color:red;">{{imageCtrl.funcMsg2}}</span>
+        </div>
+        <br><br><br>
+        
+        <div style="font-size:30px; color:black;">Button Menu 3</div>
+        <div ng-repeat="List3 in imageCtrl.list3">
+            <button ng-click="imageCtrl.listFunction3(List3.id, $index)">{{List3.label}}</button> 
+            <span ng-show="imageCtrl.show">{{imageCtrl.msg3A}}</span>
+            <span class="btnDataA">{{imageCtrl.msg3B}}</span>
+        </div> 
+        <div>   Button menu 3 is created from an array of objects and the id# 
+                received from the clicked (click one) button is: 
+                <span style="color:red;">{{imageCtrl.funcMsg3}}</span>
+                <span id="btnDataB" style="color:red;">{{imageCtrl.funcMsg3}}</span>
+        </div>
+       
+                
+                
+                
+                
+                
+    </div>
+    
+    <script>
+        
+        angular.module("imageApp",[])
+        .controller("ImageCtrl", [function(){
+            var iCtrlVar = this;
+            
+            iCtrlVar.mainMsg =  "This is a demonstration using ng-repeat to display a menu of buttons. " +
+                                "Upon clicking a button, the button's ID is sent back to the controller for processing.";
+            
+            iCtrlVar.list1 = ["button 1","button 2","button 3","button 4","button 5"];
+            
+            iCtrlVar.listFunction1 = function(btnClicked){
+                iCtrlVar.funcMsg1 = btnClicked;
+            }
+            
+                        
+            iCtrlVar.list2 = [  {id:6, label:"button 6"},
+                                {id:7, label:"button 7"},
+                                {id:8, label:"button 8"},
+                                {id:9, label:"button 9"},
+                                {id:10, label:"button 10"}];
+            
+            iCtrlVar.listFunction2 = function(btnClicked){
+                iCtrlVar.funcMsg2 = btnClicked;
+            }
+            
+            
+            // http://stackoverflow.com/questions/34093819/angularjs-accessing-dom-element-by-id-inside-ng-repeat
+            // http://stackoverflow.com/questions/15527838/ng-show-for-a-specific-element-within-ng-repeat
+            // http://jsfiddle.net/odiseo/twSFK/7/
+            // http://stackoverflow.com/questions/30256703/angularjs-dom-manipulation-of-ng-repeat-elements-in-a-directive
+            // https://www.bennadel.com/blog/2443-rendering-dom-elements-with-ngrepeat-in-angularjs.htm
+            // http://stackoverflow.com/questions/23411015/how-to-manipulate-many-elements-inside-an-ng-repeat  // this might be the one, the next link is referenced in this, NOT!
+            // http://plnkr.co/edit/gYLH7Z4b03lS2gZBHceC?p=preview                                              // this is the next link and might be the one, NOT!
+            // https://github.com/angular/angular.js/issues/2500
+            // http://stackoverflow.com/questions/23655009/how-to-set-the-id-attribute-of-a-html-element-dynamically-with-angular-js
+            
+            
+            iCtrlVar.list3 = [  {id:11, label:"button 11"},
+                                {id:12, label:"button 12"},
+                                {id:13, label:"button 13"},
+                                {id:14, label:"button 14"},
+                                {id:15, label:"button 15"}];
+            
+            iCtrlVar.listFunction3 = function(btnClicked, index){
+                iCtrlVar.funcMsg3 = btnClicked;
+                iCtrlVar.msg3A = btnClicked + " " + index + " " + iCtrlVar.list3.length;
+                iCtrlVar.msg3B = btnClicked + " " + index + " " + iCtrlVar.list3.length + " This red text is data being displayed via an \"inline\" CSS property";
+                for(i = 0; i < iCtrlVar.list3.length; i++){
+                    if(i == index){
+                        iCtrlVar.show = true;
+                        document.getElementsByClassName("btnDataA")[i].style.display = "inline";
+                        document.getElementsByClassName("btnDataA")[i].style.color = "red";
+                        document.getElementsByClassName("btnDataA")[i].style.fontSize = "12px";
+                        document.getElementById("btnDataB").style.display = "inline";
+                        // break;
+                    } 
+                    else {
+                        //iCtrlVar.show = false;
+                        document.getElementsByClassName("btnDataA")[i].style.display = "none";
+                    } 
+                    
+                }
+                
+                
+                
+                
+                
+            }
+            
+        }]);
+        
+    </script>
+    
+</body>
+</html>

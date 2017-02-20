@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!-- This file is a member of SelfEd: < SelfEd-Angular-ngRepeat-Creating-Button-Menu -->
+<!--
+01/04/2017
+Button menu using ngRepeat.
+-->
+<html>
+<head>
+    <title>SelfEd - AngularJS ngRepeat - Button Menu</title>
+    <link rel="SHORTCUT ICON" href=support/teacher.png>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    
+<style>
+
+body
+{
+margin-left: auto;
+margin-right: auto;
+width: 1300px;
+}
+    
+#mainMessage
+{
+color:blue;
+font-size:24px;
+}
+    
+button
+{
+font-size:20px;
+color:red;
+width:150px;
+height:50px;
+cursor:pointer;
+}    
+
+#func2
+{
+font-size:30px;
+color:blue;
+}
+
+.styleData
+{
+color:red;
+font-size:16px;
+}
+
+</style>    
+</head>
+
+<body ng-app="imageApp">
+    
+    <div id="mainMessage" ng-controller="ImageCtrl as imageCtrl">
+        <span style="color:red; font-size:48px;">Creating buttons with ng-repeat</span><br>
+        {{imageCtrl.mainMsg}}<br><br>
+        
+        <!-- Code Block AAA -->
+        <div style="font-size:30px; color:black;">Button Menu 1 - See Code Blocks AAA</div>
+        <div ng-repeat="List1 in imageCtrl.list1">
+            <button ng-click="imageCtrl.listFunction1(List1)">{{List1}}</button> 
+        </div>    
+        <div>   Button menu 1 is created from an array of the button names and the 
+                argument received from the clicked (click one) button is: 
+                <span style="color:red;">{{imageCtrl.funcMsg1}}</span>
+        </div>
+        <br><br>
+        
+        
+        
+        <!-- Code Block BBB -->
+        <div style="font-size:30px; color:black;">Button Menu 2 - See Code Blocks BBB</div>
+        <div ng-repeat="List2 in imageCtrl.list2">
+            <button ng-click="imageCtrl.listFunction2(List2.id)">{{List2.label}}</button> 
+        </div> 
+        <div>   Button menu 2 is created from an array of objects and the id# 
+                received from the clicked (click one) button is: 
+                <span style="color:red;">{{imageCtrl.funcMsg2}}</span>
+        </div>
+        <br><br>
+        
+        
+        
+        <!-- Code Block CCC -->
+        <div style="font-size:30px; color:black;">Button Menu 3 - See Code Blocks CCC</div>
+        <div ng-repeat="List3 in imageCtrl.list3">
+            <button ng-click="imageCtrl.listFunction3(List3.id, $index)">{{List3.label}}</button> 
+            <span ng-show="imageCtrl.show">{{imageCtrl.msg3A}}
+                <span style="font-size:12px; color:blue;">
+                    This button info using ngShow - Code Block CCCa
+                </span>
+            </span>
+            <span class="btnDataA">{{imageCtrl.msg3B}}</span>
+        </div>
+        <br><br>
+        
+        
+        
+        <!-- Code Block DDD -->
+        <div style="font-size:30px; color:black;">Button Menu 4 - See Code Blocks DDD</div>
+        <div ng-repeat="List4 in imageCtrl.list4">
+            <button ng-click="imageCtrl.listFunction4($index)">{{List4.label}}</button> 
+            <span class="styleData" ng-show="List4.show">{{imageCtrl.funcMsg4}}</span>
+        </div> 
+        <br><br>
+        
+        
+        
+        <!-- Code Block EEE -->
+        <div style="font-size:30px; color:black;">Button Menu 5 - See Code Blocks EEE</div>
+        <div ng-repeat="List5 in imageCtrl.list5">
+            <button ng-click="imageCtrl.listFunction5($index)">{{List5.label}}</button> 
+            <span class="styleData" ng-show="List5.show">{{imageCtrl.funcMsg5}}</span>
+        </div> 
+        
+        
+        
+    </div>
+    
+<script>
+
+    angular.module("imageApp",[])
+    .controller("ImageCtrl", ["DisplayDataServiceA", "DisplayDataServiceB", function(DisplayDataServiceA, DisplayDataServiceB){
+        var iCtrlVar = this;
+
+        // Code Block AAA
+        iCtrlVar.mainMsg =  "This is a demonstration using ng-repeat to display a menu of buttons. " +
+                            "Upon clicking a button, the button's ID is sent back to the controller for processing.";
+
+        iCtrlVar.list1 = ["button 1","button 2","button 3","button 4","button 5"];
+
+        iCtrlVar.listFunction1 = function(btnClicked){
+            iCtrlVar.funcMsg1 = btnClicked;
+        }
+
+
+        // Code Block BBB
+        iCtrlVar.list2 = [  {id:6, label:"button 6"},
+                            {id:7, label:"button 7"},
+                            {id:8, label:"button 8"},
+                            {id:9, label:"button 9"},
+                            {id:10, label:"button 10"}];
+
+        iCtrlVar.listFunction2 = function(btnClicked){
+            iCtrlVar.funcMsg2 = btnClicked;
+        }
+
+        // Code Block CCC
+        iCtrlVar.list3 = [  {id:11, label:"button 11"},
+                            {id:12, label:"button 12"},
+                            {id:13, label:"button 13"},
+                            {id:14, label:"button 14"},
+                            {id:15, label:"button 15"}];
+        
+        iCtrlVar.listFunction3 = function(btnClicked, index){
+            iCtrlVar.funcMsg3 = btnClicked;
+            // Code Block CCCa
+            iCtrlVar.msg3A = btnClicked + " " + index + " " + iCtrlVar.list3.length;    
+            // Code Block CCCb
+            iCtrlVar.msg3B = " This clicked button info is displayed the old fashion way via the" +
+                             " \"display\" CSS property. See Code Block CCCb";          
+            // Code Block CCCb
+            for(i = 0; i < iCtrlVar.list3.length; i++){                                 
+                if(i == index){
+                    iCtrlVar.show = true;
+                    document.getElementsByClassName("btnDataA")[i].style.display = "inline";
+                    document.getElementsByClassName("btnDataA")[i].style.color = "red";
+                    document.getElementsByClassName("btnDataA")[i].style.fontSize = "16px";
+                    //document.getElementById("btnDataB").style.display = "inline";
+                } 
+                else {
+                    document.getElementsByClassName("btnDataA")[i].style.display = "none";
+                } 
+            }
+        }
+        
+        // Code Block DDD
+        iCtrlVar.list4 =    DisplayDataServiceA.list4();
+        iCtrlVar.listFunction4 =    function(index){
+                                        DisplayDataServiceA.showBtn(index);
+                                        iCtrlVar.funcMsg4 =  
+                                        " This red text from this clicked button is displayed" +
+                                        " using ngShow. It relies on setting a true/false property" +
+                                        " in the resident data array. See Code Block DDD";
+                                    };
+        // End Code Block DDD
+        
+        // Code Block EEE
+        iCtrlVar.list5 =    DisplayDataServiceB.list5();
+        iCtrlVar.listFunction5 =    function(index){
+                                        DisplayDataServiceB.showBtn(index);
+                                        iCtrlVar.funcMsg5 =  
+                                        " This red text from this clicked button is displayed" +
+                                        " using ngShow. It relies on dynamically setting a true/false property" +
+                                        " in the resident data array. See Code Block EEE";
+                                    };
+        // End Code Block EEE
+
+    }])
+
+        // Code Block DDD
+        .factory("DisplayDataServiceA", [function(){
+            
+            var listFour = [
+                    {id:16, label:"button 16", show:false},
+                    {id:17, label:"button 17", show:false},
+                    {id:18, label:"button 18", show:false},
+                    {id:19, label:"button 19", show:false},
+                    {id:20, label:"button 20", show:false}
+                ];
+            
+            return {
+                
+                list4:      function(){
+                                return listFour;
+                            },
+                
+                showBtn:    function(index){
+                            for(i = 0; i < listFour.length; i++){
+                                if(i == index)
+                                    listFour[i].show = true;
+                                else
+                                    listFour[i].show = false;
+                            }
+                }
+            }
+        }])
+        // End Code Block DDD
+    
+    
+        // Code Block EEE
+        .factory("DisplayDataServiceB", [function(){
+            
+            var listFive = [
+                    {id:21, label:"button 21"},
+                    {id:22, label:"button 22"},
+                    {id:23, label:"button 23"},
+                    {id:24, label:"button 24"},
+                    {id:25, label:"button 25"}
+                ];
+                
+            for(i = 0; i < listFive.length; i++){
+                listFive[i].show = false;
+            }    
+            
+            return {
+                
+                list5:      function(){
+                                return listFive;
+                            },
+                
+                showBtn:    function(index){
+                            for(i = 0; i < listFive.length; i++){
+                                if(i == index)
+                                    listFive[i].show = true;
+                                else
+                                    listFive[i].show = false;
+                            }
+                }
+            }
+        }])
+        // End Code Block EEE
+    
+  
+    
+</script>
+</body>
+</html>

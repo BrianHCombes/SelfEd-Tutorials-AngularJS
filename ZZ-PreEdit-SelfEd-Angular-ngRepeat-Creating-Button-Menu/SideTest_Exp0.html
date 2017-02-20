@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <body ng-app="showngRepeatElement">
+        <div ng-controller="ShowHide as showhide">
+            <div> show something </div>    
+    <ul ng-repeat="(parentIndex, parent) in parents ">
+        <li>Mother: <i>{{parent.mother}}</i>
+        </li>
+        <li>Father: <i>{{parent.father}}</i>
+        </li> <a href="#" ng-click="showKids(parentIndex)">Show Kids</a>
+
+        <ul ng-repeat="kid in parent.kids" ng-show="isShowing(parentIndex)">
+            <li>{{kid.name}} {{kid.active}}</li>
+        </ul>
+    </ul>
+</div>
+        <script>
+     
+    angular.module("showngRepeatElement",[])
+    
+            .controller("ShowHide", [function(){
+            
+            var showCtrl = this;
+            
+            showCtrl.parents = [
+            {
+                "father":"John",
+                "mother":"Mary",
+                "kids":[{
+                  "name":"Tom"},
+                  {"name":"Jenny"}]
+            },
+                
+            {
+                "father":"Robert",
+                "mother":"Jane",
+                "kids":[
+                  {"name":"Tina"},
+                  {"name":"Harry"}
+                ]
+            }];        
+                    
+                    function ShowHide($scope) {
+            $scope.activeParentIndex;
+            $scope.showKids = function (index) {
+            $scope.activeParentIndex = index;
+            };
+    
+            $scope.isShowing = function(index){
+            return  $scope.activeParentIndex === index;
+            };
+            }         
+}]);
+  
+
+</script> 
+        
+        
+        
+        
+        
+        
+        
+        
+    </body>
+</html>
