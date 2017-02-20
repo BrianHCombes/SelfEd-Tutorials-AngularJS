@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- This file is a member of SelfEd: < SelfEd-Angular-Directives-Custom-Made > -->
+<!-- 
+//  https://thinkster.io/a-better-way-to-learn-angularjs
+
+-->
+<html ng-app="CustomDirectiveApp">
+<head>
+    <title>SelfEd - Angular - Custom Directives</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="SHORTCUT ICON" href=support/teacher-icon.png>
+
+<style>
+
+.show1
+{
+    color:red;
+}
+
+.show2
+{
+    font-size:26px;
+}
+
+.show3
+{
+    color:blue;
+}
+
+.regularCSS
+{
+    background-color: yellow;
+    padding: 10px 20px 10px 20px;
+    border: 2px solid black;
+    border-radius: 6px; 
+}
+
+.dir3
+{
+color:green;   
+font-weight:bold;
+font-size:20px;
+}
+
+.dir3show1
+{
+    background-color:purple;
+    border: 2px solid yellow;
+    border-radius: 15px;
+    width: 1000px;
+    padding: 10px 30px 10px 30px;
+    text-shadow: 1px 1px white, 1px -1px white, -1px 1px white, -1px -1px white;
+}
+
+
+</style>    
+
+
+
+
+</head>
+<body>
+
+  
+    <h1 style="color:blue;">SelfEd - Directives, common and custom made directives - Examples</h1><br>
+    <label>
+        <input type="checkbox" ng-model="CSS1">
+        Make message red
+    </label>
+    <br>
+    <label>
+        <input type="checkbox" ng-model="CSS2">
+        Make message bigger
+    </label>
+    <br>
+     <label>
+        <input type="checkbox" ng-model="CSS3">
+        Make message blue (making blue overrides red)
+    </label>
+    <br><br>
+    <div>Using the ngClass directive to manipulate the CSS in the yellow box below by checking the check boxes above</div>
+    <div class="regularCSS" ng-class="{show1:CSS1, show2:CSS2, show3:CSS3}" ng-controller="CustomDirectiveCtrl as CDC">{{CDC.customValA}} (and)<br> {{customValB}}</div>
+
+    <br><br>
+    <mydirective1></mydirective1> <!-- < mydirective1 > is its own new directive as defined in its directive module. See Code Block AAA --> 
+
+    <br><br>
+    <div mydirective2></div>
+
+    <br><br>
+    <label>
+        <input type="checkbox" ng-model="CSS4">Check to add background to default styling using ngClass
+    </label>
+    <div mydirective3 class="dir3" ng-class="{dir3show1:CSS4}">
+        <label>
+            <input type="checkbox" ng-model="CSS4">Check to add background
+        </label>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+
+<script>
+
+    angular.module('CustomDirectiveApp', [])
+
+    .controller('CustomDirectiveCtrl', ['$scope', function($scope){
+
+            var CDCtrl = this;
+
+            CDCtrl.customValA = "This is from the controller by Safe-Style of Dependency Injection";
+            $scope.customValB = "This is from the controller by $scope object";
+    }])
+
+    // Code Block AAA
+    .directive("mydirective1", function(){
+        return {
+            restrict: "E",  // The restrict keyword is discussed in book: 
+                            // < restrict: "E" > specifies the HTML specifies the directive can
+                            // be used as a new < HTML element > 
+                            // < AngularJS Up and Running page 179 chapter 11 >
+
+            templateUrl: './directive.tmpl.html'
+        }
+    })
+
+    // Code Block BBB
+    .directive("mydirective2", function(){
+        return {
+            templateUrl: 'DirectiveCachedTemplate'
+        }
+    })
+
+    // Code Block CCC
+    .directive("mydirective3", function(){
+        return {
+            template:  '<div>This sentence is default styling</div>' + 
+                       '<div style="color:blue; font-size:30px;">This is the custom ' +
+                       'directive called <span style="color:red; font-weight:bold;">mydirective3.</span><br>' +
+                       'This text is from an inline template. See < Code Block CCC > </div>'
+        }
+    })
+</script>
+ 
+
+<script type="text/ng-template" id="DirectiveCachedTemplate">
+    <div>This is the custom directive called <span style="color:red">mydirective2.</span><br>
+        It shows the content from the cached HTML template: <span style="color:red; font-size:30px; font-weight:bold; ">DirectiveCachedTemplate</span><br>
+        See < Code Block BBB > 
+    </div>
+</script>        
+</body>
+</html>
