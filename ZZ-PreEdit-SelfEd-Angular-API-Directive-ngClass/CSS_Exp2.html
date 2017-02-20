@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+This is a tiny sliver of the original for experimental purposes.
+It works!
+
+
+Here some important references:
+
+        // https://docs.angularjs.org/api/ng/directive/ngClass
+        // https://github.com/angular/angular.js/wiki/Understanding-Scopes
+
+
+-->
+<html lang="en">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<script src="//code.angularjs.org/snapshot/angular.min.js"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+        <style>
+            
+            .strikethrough
+            {
+            text-decoration: line-through;
+            color: red;
+            font-size:30px;
+            }
+            
+        </style>
+    </head>
+    <body ng-app="">
+        <div ng-class="{strikethrough:strike}">This line should get striked.</div>
+        <label>
+            <input type="checkbox" ng-model="strike">
+            Click this checkbox to strike the above line
+        </label>    
+    </body>
+</html>

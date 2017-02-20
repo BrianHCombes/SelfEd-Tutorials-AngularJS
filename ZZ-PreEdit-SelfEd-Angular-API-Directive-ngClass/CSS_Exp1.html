@@ -1,0 +1,146 @@
+<!doctype html>
+<!--
+This is a manipulated version of the original API example from:
+    
+            https://docs.angularjs.org/api/ng/directive/ngClass
+
+In this case the associated Javascript that came with the example seems
+completely unneeded. Perhaps the Javascript has to do with Plunker more than the
+example because I don't recognize the usual syntax. Obviously, I have some
+figuring out to do.
+
+Meanwhile
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-ng-class-production</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
+  
+<style>
+      
+.strike {
+text-decoration: line-through;
+}
+.bold {
+    font-weight: bold;
+}
+.red {
+    color: red;
+}
+.has-error {
+    color: red;
+    background-color: yellow;
+}
+.orange {
+    color: orange;
+}
+
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
+      
+</style>
+  
+</head>
+<body ng-app="">
+    <p ng-class="{strike: deleted, bold: important, 'has-error': error}">Map Syntax Example</p>
+    <label>
+       <input type="checkbox" ng-model="deleted">
+       deleted (apply "strike" class)
+    </label><br>
+    <label>
+       <input type="checkbox" ng-model="important">
+       important (apply "bold" class)
+    </label><br>
+    <label>
+       <input type="checkbox" ng-model="error">
+       error (apply "has-error" class)
+    </label>
+    
+    <!-- 
+    <hr>
+    <p ng-class="style">Using String Syntax</p>
+    <input type="text" ng-model="style"
+           placeholder="Type: bold strike red" aria-label="Type: bold strike red">
+    <hr>
+    <p ng-class="[style1, style2, style3]">Using Array Syntax</p>
+    <input ng-model="style1"
+           placeholder="Type: bold, strike or red" aria-label="Type: bold, strike or red"><br>
+    <input ng-model="style2"
+           placeholder="Type: bold, strike or red" aria-label="Type: bold, strike or red 2"><br>
+    <input ng-model="style3"
+           placeholder="Type: bold, strike or red" aria-label="Type: bold, strike or red 3"><br>
+    <hr>
+    <p ng-class="[style4, {orange: warning}]">Using Array and Map Syntax</p>
+    <input ng-model="style4" placeholder="Type: bold, strike" aria-label="Type: bold, strike"><br>
+    <label><input type="checkbox" ng-model="warning"> warning (apply "orange" class)</label>
+    
+    -->
+    
+    
+<script>
+    
+/*     
+ 
+    var ps = element.all(by.css('p'));
+
+    it('should let you toggle the class', function() {
+
+        expect(ps.first().getAttribute('class')).not.toMatch(/bold/);
+        expect(ps.first().getAttribute('class')).not.toMatch(/has-error/);
+
+        element(by.model('important')).click();
+        expect(ps.first().getAttribute('class')).toMatch(/bold/);
+
+        element(by.model('error')).click();
+        expect(ps.first().getAttribute('class')).toMatch(/has-error/);
+    });
+
+    it('should let you toggle string example', function() {
+        expect(ps.get(1).getAttribute('class')).toBe('');
+        element(by.model('style')).clear();
+        element(by.model('style')).sendKeys('red');
+        expect(ps.get(1).getAttribute('class')).toBe('red');
+    });
+
+    it('array example should have 3 classes', function() {
+        expect(ps.get(2).getAttribute('class')).toBe('');
+        element(by.model('style1')).sendKeys('bold');
+        element(by.model('style2')).sendKeys('strike');
+        element(by.model('style3')).sendKeys('red');
+        expect(ps.get(2).getAttribute('class')).toBe('bold strike red');
+    });
+
+    it('array with map example should have 2 classes', function() {
+        expect(ps.last().getAttribute('class')).toBe('');
+        element(by.model('style4')).sendKeys('bold');
+        element(by.model('warning')).click();
+        expect(ps.last().getAttribute('class')).toBe('bold orange');
+    });
+
+
+*/
+
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
+        
+        
+</script>
+    
+    
+    
+</body>
+</html>
+
+<!-- 
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
