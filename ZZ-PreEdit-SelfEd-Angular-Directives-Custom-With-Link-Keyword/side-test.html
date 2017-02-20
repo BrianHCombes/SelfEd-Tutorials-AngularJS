@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    
+    <!--
+    http://stackoverflow.com/questions/7716848/how-to-pass-a-form-input-value-into-a-javascript-function
+    -->
+    
+    <body>
+        <div>
+            <form action="changeBool(value)">
+                Enter element index
+                <input id="enterBool" type="number" name="Bool" value=0 style="font-size:30px;">
+                <input type="button" onclick="changeBool(document.getElementById('enterBool').value)" value="Submit Index"> 
+            </form>
+            
+            <div id="showArray"></div>
+            <br><br>
+            
+            <div id="showChange"></div>
+            
+        </div>
+        
+        <script>
+            
+        
+        var testArray = [
+            {key:"key1", bool:false},
+            {key:"key2", bool:false},
+            {key:"key3", bool:false},
+            {key:"key4", bool:false},
+            {key:"key5", bool:false},
+            {key:"key6", bool:false},
+            {key:"key7", bool:false}
+        ];
+                
+        function changeBool(index){
+                     
+            for(i = 0; i < testArray.length; i++){
+               
+                if(i == index){
+                    testArray[i].bool = true;
+                }    
+                else{
+                    testArray[i].bool = false;
+                }
+            }
+
+            showResult(index);
+        };    
+          
+        function showResult(index){
+            
+            document.getElementById("showChange").innerHTML = 
+                   "Change to <span style=\"color:blue\";>true</span> applied to index: " + index;
+           
+            for(i=0; i < testArray.length; i++){
+                document.getElementById("showChange").innerHTML += 
+                "<br>After assignment: testArray[" + i + "].bool is " + testArray[i].bool; 
+            }
+        }    
+            </script>
+        
+    </body>
+</html>

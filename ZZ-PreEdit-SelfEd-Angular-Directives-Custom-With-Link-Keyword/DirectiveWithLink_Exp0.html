@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+This file is a member of SelfEd: < SelfEd-Angular-Directives-With-Link-Keyword >
+-->
+<html>
+<head>
+    <title>SelfEd Angular Directive w Keyword Link</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="SHORTCUT ICON" href=support/teacher-icon.png>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    
+<style>
+.testDir1
+{
+    color:red;
+}
+
+.testDir2
+{
+    font-size: 36px;
+}
+
+
+
+</style>    
+
+</head>
+<body ng-app="DirWithLink">
+    <div ng-controller="Ctrl as ctrl">
+        <div>{{ctrl.test}}</div>
+        <label>
+            <input type="checkbox" ng-model="testChk1">Go Red
+        </label> 
+        <label>
+            <input type="checkbox" ng-model="testChk2">Go Big!
+        </label> 
+        <div ng-class="{testDir1:testChk1, testDir2:testChk2}">Change this text to red</div>
+        <button ng-class="{testDir1:testChk1, testDir2:testChk2}" ng-click="ctrl.dirCalc1()">
+            Do Calculation           
+        </button>
+        <div>The calculated value is {{ctrl.calculated1}}</div>
+        
+        <div custdir></div>
+        
+        <br><br>
+        <div ng-repeat="numarray in ctrl.array1">
+            <button ng-click="ctrl.dirCalc2(numarray.num1A, numarray.num1B, $index)">
+                Click to multiply
+            </button>
+            <span>{{numarray.num1A}} * {{numarray.num1B}} </span>
+            <span ng-show="numarray.show"> &nbsp;&nbsp;&nbsp;Answer is: {{ctrl.arrayCalc}}</span>
+            
+            
+        </div>
+        
+        
+    </div>
+
+
+<script>
+
+    angular.module("DirWithLink", [])
+
+    .controller("Ctrl", [function(){
+
+        var thisCtrl = this;
+        thisCtrl.test = "Tesing Control";
+
+        thisCtrl.dirCalc1 = function(){
+            thisCtrl.calculated1 = 234;
+        }
+        
+        thisCtrl.array1 = [
+            {num1A:100, num1B:10, show:false},
+            {num1A:100, num1B:20, show:false},
+            {num1A:100, num1B:30, show:true},
+            {num1A:100, num1B:40, show:false},
+            {num1A:100, num1B:50, show:false},
+        ]
+        
+        thisCtrl.dirCalc2 = function(numA, numB, index){
+            thisCtrl.arrayCalc = numA * numB;
+            //thisCtrl.array1[index] = true;
+        }
+        
+    }])
+
+    .directive("custdir", function(){
+        return {
+            template: 'This is a custom directive test'
+        }
+    })
+
+</script>
+
+
+
+</body>
+</html>
