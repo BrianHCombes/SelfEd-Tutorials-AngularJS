@@ -1,5 +1,5 @@
 ### **_My 'SelfEd' Code Diaries_**
-#**Javascript - _Angular - Nested Views_**
+#**AngularJS - _Nested Views_**
 Run in Plunker | Citation / Note
 ----------------------------------------------------------------------------|--------------------------------------------------------
 [:small_blue_diamond:**callback_Exp0.html**](https://plnkr.co/edit/9kyuMzqQtq3Q3MP8mjGC?p=preview) | [Citation AAA - Author credit for basic code structure](https://github.com/BrianHCombes/SelfEd-Tutorials-Javascript/blob/master/SelfEd-Javascript-Functions-Asynchronous-Calls/References.md)
