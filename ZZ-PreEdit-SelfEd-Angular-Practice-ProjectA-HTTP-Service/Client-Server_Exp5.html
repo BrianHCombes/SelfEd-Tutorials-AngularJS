@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!-- This file is a member of SelfEd: < SelfEd-Angular-Practice-ProjectA-HTTP-Service > -->
+<!--
+Ironically, the project has started with a first objective of generating a menu
+of buttons using ng-repeat and then being able to register which button has been
+clicked. 
+-->
+<html>
+<head>
+    <title>SelfEd - Practice Project</title>
+    <link rel="SHORTCUT ICON" href=support/teacher.png>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-route.js"></script>
+     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet"  type="text/css" href="support/client-server.css"/>
+    
+</head>
+
+<body ng-app="imageApp">
+    
+    <div id="mainMessage" ng-controller="ImageCtrl as imageCtrl">
+        <div>This is file: Client-Server_Exp5.html</div>
+        <div id="msg">   
+                This is a demonstration using ng-repeat to display a menu of buttons.<br> 
+                Upon clicking a button, the button's ID is sent back to the controller<br>
+                and used to query a server for the image information. <br>
+                The queried information is returned below.
+        </div>
+
+        <div id="ref1" ng-repeat="List in imageCtrl.list" style="position:relative;">
+            <button ng-click="imageCtrl.listFunction(List.file, List.id)">{{List.label}}</button> 
+        </div> 
+        <!--<div id="tmpl1" ng-view style="position:absolute; left:600px; top:250px;"></div>-->
+        <div ng-view id="tmpl1" style="position:absolute;"></div>
+        
+        
+        <script>
+            var ref1 = $("#ref1");
+            var offset = ref1.offset();
+            console.log( "left: " + offset.left + ", top: " + offset.top ); 
+            
+            //document.getElementById("tmpl1").style.left = (offset.left + 350) + "px";
+            //document.getElementById("tmpl1").style.top = (offset.top) + "px";
+            
+            // http://api.jquery.com/offset/
+        </script>
+        
+        
+        
+        <div>List group file received from clicked button is: <span style="color:red;">{{imageCtrl.funcMsgFile}}</span></div>
+        <div>List group id# received from clicked button is: <span style="color:red;">{{imageCtrl.funcMsgID}}</span></div>
+        <br>
+        
+        <div>Return value from service 1 is: {{imageCtrl.returnService1}} 
+            <span style="font-size:18px; color:white; background:black; padding:2px 10px 2px 10px;">
+                THIS IS A TEST: Note the usage of the dot operator to return this property of the object in query1 of the "ImageService" factory service.
+            </span>
+        </div>
+        
+        <div>Return value from service 2 is: {{imageCtrl.returnService2}}
+            <span style="font-size:18px; color:white; background:black; padding:2px 10px 2px 10px;">
+                THIS IS A TEST: This is a simple number return from query2 of the "ImageService" factory service.
+            </span>
+        
+        </div><br>
+
+        <div style="color:green;">The image group requested by parameter passing is:
+            <span style="font-size:18px; color:white; background:black; padding:2px 10px 2px 10px;">
+                THIS IS A TEST: This is a server query (query3) using $http in the "ImageService" factory service. This displays all the properties of the response object
+            </span>
+            <br> 
+            <span style="color:red; font-size:20px;">
+                Data object is: <span style="color:blue;">{{imageCtrl.data}}</span><br>
+                Query Status is: <span style="color:blue;">{{imageCtrl.status}}</span><br>   
+                Headers are: <span style="color:blue;">{{imageCtrl.headers}}</span><br>
+                Configuration is: <span style="color:blue;">{{imageCtrl.config}}</span><br>
+                Status Text is: <span style="color:blue;">{{imageCtrl.statusText}}</span> 
+            </span>
+        </div> 
+        <div id="other" style="position:relative;">{{imageCtrl.returnOther1}}</div>
+        <!--<div style="position:absolute; left:800px;">Test</div>-->
+    </div>
+    
+    <script>
+        
+        
+        angular.module("imageApp",["ngRoute"])
+        
+        .config(function($routeProvider){
+            $routeProvider
+            .when("/", {
+                templateUrl: "./imageGroup1.tmpl.html",
+                // controller: "TmplPosition"
+            })
+            .otherwise({template:"No route found"});
+        })
+        
+        .controller("ImageCtrl", ['$http', 'ImageService', 'DOMService', '$log', function($http, ImageService, DOMService, $log){
+            var thisCtrl = this;
+          
+            thisCtrl.list = [   {id:1, file:"support/imageGroup1.html", label:"Image Group 1"},
+                                {id:2, file:"support/imageGroup2.html", label:"Image Group 2"},
+                                {id:3, file:"support/imageGroup3.html", label:"Image Group 3"},
+                                {id:4, file:"support/imageGroup4.html", label:"Image Group 4"},
+                                {id:5, file:"support/imageGroup5.html", label:"Image Group 5"}];
+            
+            thisCtrl.listFunction = function(groupFileClicked, groupIDClicked){
+                thisCtrl.funcMsgFile = groupFileClicked;
+                thisCtrl.funcMsgID = groupIDClicked;
+                queryCall(groupIDClicked);
+                thisCtrl.returnOther1 = DOMService.other1(groupIDClicked);
+                DOMService.position2(groupIDClicked);
+            }
+            
+            thisCtrl.returnService1 = ImageService.query1();
+           
+            thisCtrl.returnService2 = ImageService.query2();
+            
+            var dataVar = "800";
+            
+            // call $http with query3 function
+            function queryCall(groupID){
+                    ImageService.query3(groupID).then(function(response) {
+                        thisCtrl.data = dataVar = response.data;
+                        thisCtrl.status = response.status;
+                        thisCtrl.headers = response.headers;
+                        thisCtrl.config = response.config;
+                        thisCtrl.statusText = response.statusText;
+                        // console.log("The response data is: " + thisCtrl.data);
+                    }, function(errResponse) {
+                        console.error('Error while fetching single image');
+                    });
+                    // thisCtrl.returnOther1 = dataVar;
+            } 
+            // thisCtrl.returnOther1 = DOMService.other1();
+            //thisCtrl.returnOther1 = dataVar;
+            
+          //  document.getElementById("tmpl1").style.left = (offset.left + 350) + "px";
+          //  document.getElementById("tmpl1").style.top = (offset.top + 50) + "px";   
+            
+        }])
+    
+     
+/*      
+        .controller("TmplPosition", ['DOMService', function(DOMService){
+            document.getElementById("tmpl1").style.left = (offset.left + 350) + "px";
+            document.getElementById("tmpl1").style.top = (offset.top + 50) + "px";   
+                
+                
+            }
+        ])
+*/
+
+    
+        .factory('ImageService', ['$http', function($http){
+            return {
+                query1: function(){return {"id":4,"ImageGroup":"Anywhere"}.ImageGroup;},
+                query2: function(){return 89101112;},
+                query3: function(group){return $http.get('/api/image/' + group);}
+            }            
+        }])
+    
+    
+        .factory('DOMService', [ function(){
+               
+            return {
+                other1:     function(){
+                                 document.getElementById("other").style.left = "600px";
+                                 return 80;
+                            },
+                
+                position2:  function(btnId){
+                                btnId = (btnId - 1) * 50;
+                                document.getElementById("tmpl1").style.left = (offset.left + 350) + "px";
+                                document.getElementById("tmpl1").style.top = (offset.top + btnId) + "px";   
+                            }
+            }      
+        }]);
+        
+    </script>
+    
+</body>
+</html>
