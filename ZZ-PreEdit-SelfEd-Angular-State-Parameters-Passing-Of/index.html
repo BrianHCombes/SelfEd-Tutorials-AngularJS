@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--
+
+    // http://stackoverflow.com/questions/22610787/angular-ui-router-stateparams-not-working  
+    // http://swaac.tamouse.org/angularjs/2015/03/27/learning-ui-router-and-passing-values-in-$stateparams/
+    // http://stackoverflow.com/questions/5948659/when-should-i-use-a-trailing-slash-in-my-url
+    // https://www.ietf.org/rfc/rfc1738.txt
+    // https://github.com/angular-ui/ui-router/wiki/url-routing
+    // http://stackoverflow.com/questions/27645202/what-is-the-difference-between-routeprovider-and-stateprovider-in-angularjs
+    // https://ui-router.github.io/ng1/
+    // https://scotch.io/tutorials/3-simple-tips-for-using-ui-router - This seems good at grasping the basic understanding
+    //
+
+-->
+<html ng-app="ParamApp">
+    <head>
+        <title>Angular SelfEd - Passing Parameters</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div ng-controller="ParamCtrl" data-ui-view="ParamView1"></div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+        <script>
+            
+            angular.module('ParamApp', ['ui.router'])
+            
+        /*
+         * 
+         * @param {type} $stateProvider
+         * @param {type} $urlRouterProvider
+         * @returns {undefined}
+         * 
+         * 
+         * Notes:   - Works without dots in the state and url names in the config block.
+         * 
+         *          - You can enter a parameter from the browser at the end of 
+         *          the url path and get it to show as the value part of the $stateParam object
+         * 
+         *          -$stateParams is an object with a name-value pair. The argument passed
+         *          '/:paramtmpl1' in the url line below appears to become the name of the
+         *          name-value pair. And the argument passed from the browser becomes the
+         *          value of the name-value pair.
+         * 
+         * 
+         */    
+        
+
+/*            
+            .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+                    $urlRouterProvider.otherwise('/');
+                    $stateProvider
+                        .state('paramtmpl1', {
+                            url: '/:paramtmpl1',
+                            views: {
+                                'ParamView1': {
+                                    templateUrl: './paramtmpl1.html'
+                                }                    
+                            }
+                        })
+            }])
+            
+            
+            .controller('ParamCtrl', ['$scope', '$stateParams', function($scope, $stateParams){
+                    
+                   // expect($stateParams).toBe({paramtmpl1: "AHA!!"}); 
+                    
+                   $scope.ParamVar = 'Hello World Again!!'; 
+                   $scope.ParamName = $stateParams;
+                   $scope.ParamValue = $stateParams.paramtmpl1;
+                   
+                    
+                    
+            }])
+*/            
+            
+//************************************************************************************            
+    // Here's the other way, of which is a little more clearer
+            
+    .config([
+        '$stateProvider' , '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/');
+        $stateProvider
+            .state('egglyCategoriesBookmarks',
+            {   
+                url: '/',
+                //url: '/',
+          
+                
+                params: {
+                    id: 0,
+                    blue: '0000FF',
+                    categories: 'categories!!'
+                },
+                
+                
+                // url: '/',
+                views: {
+                    
+                    
+                    'categories@': {
+                        controller: 'MainCtrl',
+                        //controller: 'CategoriesCtrl',
+                        templateUrl: './app/categories/categories.tmpl.html'
+                        // templateUrl: 'app/categories/categories.tmpl.html'
+                    },
+                        
+                    
+                    'bookmarks@':{
+                        templateUrl: 'app/categories/bookmarks/bookmarks.tmpl.html', 
+                        controller: 'MainCtrl'
+                        // controller: 'BookmarksCtrl'
+                    }    
+                }
+            });
+    }])
+    
+ 
+    .controller('BookmarksCtrl', ['$scope', '$stateParams', function($scope, $stateParams) {
+    $scope.currentCategoryName = 'Should see url parameter to:' + $stateParams.blue;
+    }])
+    
+//**************************************************************************************          
+            
+        </script>
+    </body>
+</html>

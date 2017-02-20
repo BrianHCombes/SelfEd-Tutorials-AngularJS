@@ -1,0 +1,51 @@
+<html>
+  <head>
+<!--       
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-ui-router.js"></script>
+    <script src="helloworld.js"></script>
+-->
+    <style>.active { color: red; font-weight: bold; }</style>
+  </head>
+
+  <body ng-app="helloworld">
+    <a ui-sref="hello" ui-sref-active="active">Hello</a>
+    <a ui-sref="about" ui-sref-active="active">About</a>
+    <a ui-sref="extra" ui-sref-active="active">Extra</a>
+
+    <data-ui-view></data-ui-view>
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>    
+<script>  
+    
+var myApp = angular.module('helloworld', ['ui.router']);
+
+myApp.config(function($stateProvider) {
+    var helloState = {
+        name: 'hello',
+        url: '/hello',
+        template: '<h3>hello world!</h3>'
+    }
+
+    var aboutState = {
+        name: 'about',
+        url: '/about',
+        template: '<h3>Its the UI-Router hello world app!</h3>'
+    }
+
+    var extraState = {
+        name: 'extra',
+        url: '/extra',
+        templateUrl: './extra.tmpl.html'
+    }  
+
+    $stateProvider.state(helloState);
+    $stateProvider.state(aboutState);
+    $stateProvider.state(extraState);
+});
+    
+</script>    
+    
+  </body>
+</html>
