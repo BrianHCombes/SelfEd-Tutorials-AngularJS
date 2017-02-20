@@ -10,12 +10,10 @@ Run in Plunker | Citation / Note
 ### :arrow_down_small: **Metadata**
 **SelfEd**          |  **Info** 
 ------------------- | ------------------------------------------------------------------------
-**Date:**           | 11/27/2016
-                    | 01/27/2017 (Update)
-**Archive_Title:**  | SelfEd-Javascript-Functions-Asynchronous-Calls
-**Objective:**      | To better understand asynchronous functions (calls) to better understand things like 'promises'
-**Catalyst 1:**     | Was reviewing node.js, namely these links:                                                                       **[https://www.tutorialspoint.com/nodejs/nodejs_callbacks_concept.htm](https://www.tutorialspoint.com/nodejs/nodejs_callbacks_concept.htm) ,   [SelfEd-Javascript-Functions-Closures](https://github.com/BrianHCombes/SelfEd-Tutorials-Javascript/tree/master/SelfEd-Javascript-Functions-Closures) ,  [SelfEd-NodeJS-Server-Creating-Of-B](https://github.com/BrianHCombes/SelfEd-Tutorials-NodeJS/tree/master/SelfEd-NodeJS-Server-Creating-Of-B)** and still felt unsatisfied about the underlying mechanism that makes a function asynchronous. Explanations seemed lacking and examples seemed overly complicated. But I have a hunch and am developing that hunch in this SelfEd. 
-**Catalyst 2:**     | Also was having trouble moving the RESTful call **_$http.get_** from a controller to a service method in Angular. 
+**Date:**           | 11/01/2017
+**Archive_Title:**  | SelfEd-Angular-Nested-Views
+**Objective:**      | To have ready examples of nested views using ui-router
+**Catalyst:**       | After finishing Angular states tutorial wanted to work on states within states (nested views) to deepen the understanding 
 
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 
