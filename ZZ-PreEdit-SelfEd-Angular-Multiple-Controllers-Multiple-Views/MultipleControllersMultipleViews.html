@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--
+SelfEd: https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views
+-->
+<html ng-app="inputTest" >
+    <head>
+        <title>Multiple Views Multiple Controllers</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!--<link rel="stylesheet" href="assets/css/normalize.css">-->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+
+        <!--<link rel="stylesheet" href="assets/css/eggly.css">-->
+        <!--<link rel="stylesheet" href="assets/css/animations.css">-->
+     
+        <style>
+            
+            .inputA
+            {
+                color:red;
+            }
+            
+            .inputB
+            {
+                color:blue;
+            }
+            
+            .inputCC
+            {
+                color:aqua;
+                background-color:purple;
+                padding:0px 10px 0px 10px;
+            }
+            
+        </style>
+        
+        
+        
+    </head>
+    <body style="margin:100px auto 0px auto; width:960px;">
+        <div ng-controller="inputCtrl as input">
+            
+             
+            <form ng-submit="input.submit()">
+                <input type="text" 
+                       ng-model="input.inputA"
+                       ng-class="input.inputACSS()"
+                       ><br><br>Also, the following is from the first input: <span ng-class="input.inputACSS()">{{input.inputA}}</span><br><br>
+                <input type="text"
+                       ng-model="input.inputB"
+                       ng-class="input.inputBCSS()"
+                       ><br><br>Also, the following is from the second input: <span ng-class="input.inputBCSS()">{{input.inputB}}</span><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        
+        
+            <br><br>
+            <span ng-class="input.inputCCSS()">{{input.inputC}}</span>    
+        </div>
+        
+        <div ng-controller="secondCtrl as ctrlB">
+             
+            <p> The following in red is from the second controller: <span style="color:red;">{{ctrlB.secondCtrlValue}}</span><br><br>
+                
+            
+            </p>
+            
+        </div>    
+        
+        <div data-ui-view="view1">View1</div>
+        
+        <div data-ui-view="view2">View2</div>            
+            
+        <div data-ui-view="view3">View3</div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.js"></script> 
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+        
+        
+        
+        <script src="MultipleControllersMultipleViews.js"></script>    
+        <script src="UI-ViewModule.js"></script>
+    
+    <!--<script src="vendor/angular-ui-router.min.js"></script>-->
+
+<!--     
+    
+    <script>
+        angular.module('inputTest', ['ui-router'])
+        
+        /*
+            .config([
+            '$stateProvider' , '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+            $urlRouterProvider.otherwise('/');
+            $stateProvider
+                .state('eggly', {
+                    url: '/',
+                    templateUrl: './tmplTest.tmpl.html',
+                    controller: 'secondCtrl'
+                });
+            }])
+        */
+        
+        /*
+        
+        
+            .controller('inputCtrl', ['$log', '$scope', function($log, $scope) {
+                
+                $scope.scopeVar = 25;
+                    
+                var receive = this;
+                
+                receive.submit = function(){
+                    $log.log('The first input is: ' + receive.inputA + " and the sceond input is: " + receive.inputB);
+                };
+            }])
+        
+        
+           
+        
+        
+            .controller('secondCtrl', [function() {
+                
+                var secondVar = this;
+              
+                secondVar.secondCtrlValue = "Yes! this is from the second controller";
+                
+              
+            }]);
+            
+        */    
+    </script>
+
+-->
+        
+    </body>
+</html>

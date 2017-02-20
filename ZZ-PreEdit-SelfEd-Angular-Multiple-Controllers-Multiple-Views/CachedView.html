@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+
+    // https://github.com/angular-ui/ui-router/wiki/quick-reference#stateproviderstatestatename-stateconfig
+
+
+
+
+
+-->
+<html>
+    <head>
+        <title>Named View Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body ng-app="ViewApp">
+        <div >
+            
+            <div data-ui-view="view1">This is a view</div>
+            
+            <div data-ui-view="view2">This is the other view</div>
+            
+        </div>
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <!--<script src="vendor/angular-ui-router.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>    
+    <script>
+        
+        angular.module('ViewApp',['ui.router'])
+        
+            .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+                $urlRouterProvider.otherwise('/');
+                $stateProvider
+                        .state('viewState', {
+                            url:'/',
+                            views: {
+                                 // 'view1': {templateUrl: './view1.tmpl1.html'}   
+                                 'view1': {templateUrl: 'cache.tmpl1.html',
+                                            controller: 'view1Ctrl'}, 
+                                 
+                                 'view2': {templateUrl: './CachedView.tmpl1.html'}
+                            }
+                        });
+            /*            
+                var viewState2 = {
+                    
+                    name: 'viewState2',
+                    url:  '/',
+                    templateUrl:'./view1.tmpl1.html'
+                };        
+               
+               $stateProvider.state(viewState2);
+           */             
+                        
+        }])
+    
+    
+            .controller('view1Ctrl', ['$scope', function($scope){
+                  $scope.view1Data = 'This is the DATA from the controller!!';  
+                    
+        }])
+    
+    
+    
+    </script>
+    
+    <script type="text/ng-template" id="cache.tmpl1.html">
+         
+        <h1 style="color:blue;">This is template1 for view1 from a cache view with a controller involved:<span style="color:red;">{{view1Data}}</span></h1>
+
+    </script>
+        
+        
+        
+    </body>
+</html>
