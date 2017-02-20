@@ -1,0 +1,112 @@
+<!-- Dependency examples -->
+<!-- SelfEd - < SelfEd-Angular-Module-Dependency-Chain-Simple-Example > -->
+
+<html>
+    <head>
+        <title>SelfEd – Angular Dependencies</title>
+        <link rel="SHORTCUT ICON" href=http://www.tarptiedown.com/ttd-website/ttd-website-pics-videos/instruction-images/teacherIcon.png>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body ng-app="Chain">
+        
+        <div ng-controller="chainCtrlA as chainVarA">Looking for>>>>>> {{chainVarA.testVarA}}</div>
+        
+        <br><br>
+        
+        <div ng-controller="chainCtrlB as chainVarB">Looking for>>>>>> {{chainVarB.testVarB}}</div>
+        
+        <br><br>
+        
+        <div ng-controller="chainCtrlC as chainVarC">Looking for>>>>>> {{chainVarC.testVarC}}</div>
+        
+        <br><br>
+        
+        <div ng-controller="chainCtrlD as chainVarD">Looking for>>>>>> {{chainVarD.testVarD}}</div>
+        
+        <br><br>
+        
+        <div ng-controller="chainCtrlE as chainVarE">Looking for>>>>>> {{chainVarE.testVarE}}</div>
+        
+        
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+        <script src="fifthController.js"></script>
+        <script>
+            
+            angular.module('Chain',['DependB', 'DependC'])
+            
+            .controller('chainCtrlA', [function(){
+                
+                var a = this;
+                a.testVarA = 'This text is from the first and also the main controller'; 
+            }]);                
+          
+            
+            angular.module('DependB', [])
+            
+            .controller('chainCtrlB', [function(){
+                    
+                var b = this;
+                b.testVarB = 'This text is from a second controller which is listed as a dependency in the first controller';
+                    
+            }]);            
+            
+            
+            angular.module('DependC', ['DependD'])
+            
+            .controller('chainCtrlC', [function(){
+                    
+                var c = this;
+                c.testVarC = 'This text is from a third controller which is listed as a dependency in the first controller';
+                console.log(c.testVarC);
+            
+            }]);        
+            
+            
+            angular.module('DependD', ['DependE'])
+            
+            .controller('chainCtrlD', [function() {
+               
+                var d = this;
+                d.testVarD = 'This text is from a fourth controller which is listed as a dependency in the third controller which is listed as a dependency in the first controller';
+                //return d.testVarD;    
+            }]);
+        
+    
+    
+            // module < DependE > is a separate JS file called < fifthController.js >
+            // It is a simple test demonstrating that modules can be placed 
+            // in separate files
+        /* 
+            angular.module('DependE', [])
+            
+            .controller('chainCtrlE', [function() {
+                  
+                var e = this;
+                e.testVarE = 'This is from the fifth controller';
+                    
+                    
+            }]);
+    
+        */    
+    
+    
+    
+            
+    // http://stackoverflow.com/questions/26594140/how-to-share-data-between-two-modules-in-angularjs
+    // http://jsbin.com/AgAYIVE/2/edit?html,js,output   (This seems a good one)
+    // http://stackoverflow.com/questions/20751172/angularjs-modules-scope-sharing
+    // https://thinkster.io/a-better-way-to-learn-angularjs/services
+    // 
+    // 
+    // 
+    // 
+            
+        </script>
+        
+        
+        
+    </body>
+</html>
