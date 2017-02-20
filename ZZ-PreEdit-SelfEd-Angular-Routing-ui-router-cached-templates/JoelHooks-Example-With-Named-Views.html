@@ -1,0 +1,133 @@
+<html>
+<head>
+    
+    <title>View Experiments</title>
+    <style>
+   
+div {
+cursor:pointer;
+}        
+        
+    .row
+    {
+    background-color:#DDDDDD;    
+    }
+
+    .red   
+    {
+    background-color: red;
+    color:white;
+    }
+
+    .blue   
+    {
+    background-color: blue;
+    color:white;
+    }
+
+    .green   
+    {
+    background-color: green;
+    color:white;
+    }
+    
+    .yellow
+    {
+    background-color: yellow;
+    border:1px solid black;
+    color:black;
+    padding-left: 100px;
+    }
+    
+    .purple
+    {
+    background-color: purple;
+    color:white;
+    }
+    
+    
+    </style>    
+</head>    
+<body>
+<div ng-app="app1">
+
+    <!--<div data-ui-view="contentView"></div>-->
+    <div data-ui-view></div>
+    <!--
+    I like this caching approach for the sake of useful techniques. Otherwise, it is self explanatory.
+    This lesson came from:
+    http://joelhooks.com/blog/2013/07/22/the-basics-of-using-ui-router-with-angularjs/
+    
+    // https://thinkster.io/a-better-way-to-learn-angularjs/config-function
+    // https://www.sitepoint.com/10-reasons-use-angularjs/
+    
+    
+    
+    
+    -->
+    
+    <!-- Below are the templates that get cached since we can't have external templates with JSFiddle -->
+
+    <!-- CACHE FILE: list.html -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <!--<script src="vendor/angular-ui-router.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
+    <script src="JoelHooks-Example-With-Named-Views.js"></script>
+    
+    <!-- The html inside these script blocks are the cache files -->
+
+    
+    <script type="text/ng-template" id="content.html">
+        <div class="row">
+             <h3>This is the header</h3>
+        </div>
+        <div class="row">
+            <div class="small-4 columns" ng-controller="SidebarCtrl">
+                <ul>
+                    <li ng-repeat="page in content"> <a ng-click="setPage(page)">goto {{page}}</a></li>
+                </ul>
+            </div>
+            <div class="small-8 columns content">
+                <div data-ui-view></div>
+            </div>
+        </div>
+    </script>
+    
+    <script type="text/ng-template" id="content.red.html">
+        <div class="row red">
+             red
+        </div>
+    </script>
+    
+    <script type="text/ng-template" id="content.blue.html">
+        <div class="row blue">
+             blue
+        </div>
+    </script>
+    
+    <script type="text/ng-template" id="content.green.html">
+        <div class="row green">
+             green
+        </div>
+    </script>
+    
+    <script type="text/ng-template" id="content.yellow.html">
+        <div class="row yellow">
+             yellow
+        </div>
+    </script>
+    
+    <script type="text/ng-template" id="content.purple.html">
+        <div class="row purple">
+             purple
+        </div>
+    </script>
+
+    <!--<div ng-controller="view2Ctrl">Should see something here<br>{{view2Test}}</div>-->
+   <!-- <div data-ui-view="view2">Should see red lettered words here<br>{{view2Test}}</div>-->
+    
+    
+</div>
+</body>    
+</html>    
