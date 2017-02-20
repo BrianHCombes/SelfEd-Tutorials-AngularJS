@@ -34,19 +34,13 @@ Run in Plunker | Citation / Note
 - 11/01/2016    
 Had finished this but have returned on 11/16/2017 to tidy it up for GitHub
     
-In the process of posting SelfEd: [:small_blue_diamond:**SelfEd-Angular-States-Understanding-Of**](https://github.com/BrianHCombes/SelfEd-Tutorials-AngularJS/tree/master/Angular-States-Understanding-Of) on GitHub I picked up additional understandings of states. 
+  In the process of posting SelfEd: [:small_blue_diamond:**SelfEd-Angular-States-Understanding-Of**](https://github.com/BrianHCombes/SelfEd-Tutorials-AngularJS/tree/master/Angular-States-Understanding-Of) on GitHub I picked up additional understandings of states. 
 
-At first glance it must be noted:
+  At first glance it must be noted:
 
-**"The default view chain"**
-  About what I call the **"default view "chain":** All the default view(s) up the sibling chain will show until the first defined url with a backslash is encountered. So if a view has a backslash for its url and that view is a child of a child of a root view, then all the views from the child through the root will show.
+**"The default view chain"**   
+  About what I call the **"default view "chain":** In this example there are multiple nested views that all appear as default views upon page load. All the default view(s) up the sibling chain will show until the first defined url with a backslash is encountered. So if a view has a backslash for its url and that view is a child of a child of a root view, then all the views from the child through the root will show.
        
-
-
-About the default view "chain": All the default view(s) up the sibling chain will show until the first defined url with a backslash is encountered. So if a view has a backslash for its url and that view is a child of a child of a root view, then all the views from the child through the root will show.
-
-
-
 
 
 
