@@ -1,0 +1,35 @@
+SelfEd Date:        (12/24/2016)
+                    Note: I started this SelfEd on 10/02/2016. After many code excursions  I'm back to expand on it.
+
+SelfEd Title:       SelfEd-Angular-Services-Factory-Creating-Of
+
+SelfEd Objective:   To further my understanding of factories and services.
+
+SelfEd Catalyst:    Upon this revisit, I've been studying $http services as
+                    dependencies for a controller.
+                        See book < AngularJS Up and Running > p90 for the subject.
+
+SelfEd References:  
+                    Book: AngularJS Up and Running - Page 90
+
+Process:
+
+SelfEd - Creating an AngularJS service
+Since it's taboo to exchange data between controllers and also taboo to declare
+global variables and objects the goto place for data exchange is a service.
+This code builds from module to module until a function called changeValue() in
+the Controller named CtrlFour up to using a service to receive.
+
+01/05/2017
+I've revisited this SelfEd. I've been working on SelfEd project:
+< SelfEd-Angular-Practice-ProjectA >. I needed to refresh myself on setting up
+services. I added a controller < CtrlNine > to the mix which sends an 
+argument to the service < ServiceCallFive >. I did this to make sure I was
+sure you can also send an argument to a service.
+
+01/11/2017
+I'm still working on SelfEd project: < SelfEd-Angular-Practice-ProjectA > and
+wanted to have the same controller call two custom services. Yes, you 
+can do that, DUH! See controller < CtrlTen > to see this in action.
+
+

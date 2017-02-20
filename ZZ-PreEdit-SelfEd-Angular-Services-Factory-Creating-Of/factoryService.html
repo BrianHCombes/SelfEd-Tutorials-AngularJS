@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!-- This file is a member of SelfEd: < SelfEd-Angular-Services-Factory-Creating-Of > -->
+
+
+<!--
+SelfEd - Creating an AngularJS service
+Since it's taboo to exchange data between controllers and also taboo to declare
+global variables and objects the goto place for data exchange is a service.
+This code builds from module to module until a function called changeValue() in
+the Controller named CtrlFour up to using a service to receive
+
+
+-->
+<html>
+    <head>
+        <title>SelfEd - Angular - Creating a Service</title>
+        <link rel="SHORTCUT ICON" href=http://www.tarptiedown.com/ttd-website/ttd-website-pics-videos/instruction-images/teacherIcon.png>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>    
+    </head>
+    
+    <body ng-app="ServiceOne">
+        <div >
+            <p ng-controller="CtrlOne"> This is from CtrlOne: {{varOne}} and {{5+5}}</p>
+            
+            <p ng-controller="CtrlTwo as Ctrl2"> This is from CtrlTwo: {{Ctrl2.varTwo}}</p>
+            
+            <p ng-controller="CtrlThree as Ctrl3"> This is from CtrlThree: {{Ctrl3.varThree}}</p>
+            
+            <button ng-controller="CtrlFour as Ctrl4" ng-click="Ctrl4.changeValue()">
+                    This is from CtrlFour - Click this one for some action to assure proper functionality - {{Ctrl4.varFourTextA}} {{Ctrl4.varFour}}</button>
+            <br><br>
+            <button ng-controller="CtrlFive as Ctrl5" ng-click="Ctrl5.serviceCall()">
+                    This is from controller 'CtrlFive'. Click this for some action with a 
+                    <span style="color:red; font-weight:bold; font-size:2em;"> service </span>
+                    call which should return 12345 in big red numbers:  
+                    <span style="color:red; font-weight:bold; font-size:2em;">{{Ctrl5.varFive}}</span>
+            </button>
+            
+            <p ng-controller="CtrlSix as Ctrl6">
+                This is returned from the 
+                <span style="color:blue; font-weight:bold; font-size:2em;"> service </span>
+                called ServiceCallFive and it should be 12345 in big blue numbers: 
+                <span style="color:blue; font-size:24px;">{{Ctrl6.varSix}}</span>
+            </p>
+            
+            <p ng-controller="CtrlSeven as Ctrl7">
+                This is from CtrlSeven and data is returned from the 
+                <span style="color:darkorange; font-weight:bold; font-size:2em;"> service </span>
+                called ServiceCallFive and it should be 12345 - 345 - 1000 = 11000 in big orange numbers: 
+                <span style="color:darkorange; font-size:24px;">{{Ctrl7.varSeven}}</span>
+            </p>
+            <br>
+            <button ng-controller="CtrlEight as Ctrl8" ng-click="Ctrl8.serviceCall(10000)">
+                    Click this for some action with a 
+                    <span style="color:purple; font-weight:bold; font-size:2em;"> service </span>
+                    call which should change the value of factoryVarFive in the service called ServiceCallFive and return 22345 in big purple numbers:  
+                    <span style="color:purple; font-weight:bold; font-size:4em;">{{Ctrl8.varEight}}</span>
+            </button>
+            
+            <br><br>
+            <button ng-controller="CtrlNine as Ctrl9" ng-click="Ctrl9.serviceCall()">
+                    This is from controller 'CtrlNine'. Click this for some action with a 
+                    <span style="color:red; font-weight:bold; font-size:2em;"> service </span>
+                    call which received the number 200 and is multiplied by 12345 and should then return 2469000 in big red numbers:  
+                    <span style="color:red; font-weight:bold; font-size:2em;">{{Ctrl9.varNine}}</span>
+            </button>
+            
+            <br><br>
+            <button ng-controller="CtrlTen as Ctrl10" ng-click="Ctrl10.serviceCall()">
+                    This is from controller 'CtrlTen'. Click this for some action with a 
+                    <span style="color:red; font-weight:bold; font-size:2em;"> service </span>
+                    call which received the number 200 and is multiplied by 12345 and should then return 2469000 in big red numbers:  
+                    <span style="color:red; font-weight:bold; font-size:2em;">{{Ctrl10.varTenA}} And {{Ctrl10.varTenB}} And {{Ctrl10.varTenC}}</span>
+            </button>
+            
+            
+        </div>
+   
+        <script>
+            
+        angular.module('ServiceOne', [])
+        
+        
+            .controller('CtrlOne', ['$scope', function($scope){
+                    $scope.varOne = "AHA!";
+            }])
+        
+            
+            
+            .controller('CtrlTwo', [ function(){
+                var thisCtrlInstance = this;
+                thisCtrlInstance.varTwo = "AHA Again!";
+            }])
+            
+            
+            
+            .controller('CtrlThree', [ function(){
+                var thisCtrlInstance = this;
+                thisCtrlInstance.varThree = "AHA Again and Again!!";
+            }])
+            
+          
+            .controller('CtrlFour', [ function(){
+                var thisCtrlInstance = this;
+                thisCtrlInstance.varFourTextA = "This starts as: ";
+                thisCtrlInstance.varFour = 15;
+                thisCtrlInstance.changeValue = function(){ 
+                    thisCtrlInstance.varFourTextA = "This ends as: ";
+                    thisCtrlInstance.varFour = 40;};
+            }])
+            
+            
+            .controller('CtrlFive', ['ServiceCallFive', function(ServiceCallFive){
+                var thisCtrlInstance = this;
+                thisCtrlInstance.serviceCall = function(){      
+                    thisCtrlInstance.varFive = ServiceCallFive.opFive();
+                }
+            }])
+            
+            
+            .controller('CtrlSix', ['ServiceCallFive', function(ServiceCallFive){
+                    var thisCtrlInstance = this;
+                    thisCtrlInstance.varSix = ServiceCallFive.opFive();
+            }])
+        
+            
+            .controller('CtrlSeven', ['ServiceCallFive', function(ServiceCallFive){
+                    
+                    var thisCtrlInstance = this;
+                    thisCtrlInstance.varSeven = ServiceCallFive.opSeven();
+                    
+            }])
+        
+        
+            .controller('CtrlEight', ['ServiceCallFive', function(ServiceCallFive){
+                    
+                    var thisCtrlInstance = this;
+                    thisCtrlInstance.varEight = ServiceCallFive.opFive();
+                    thisCtrlInstance.serviceCall = function(number){
+                        thisCtrlInstance.varEight = ServiceCallFive.opEight(number) 
+                    }
+            }])
+        
+            .controller('CtrlNine', ['ServiceCallFive', function(ServiceCallFive){
+                var thisCtrlInstance = this;
+                thisCtrlInstance.serviceCall = function(){      
+                    thisCtrlInstance.varNine = ServiceCallFive.opFive(200);
+                }
+            }])
+        
+        
+            .controller('CtrlTen', ['ServiceCallTen', 'ServiceCallFive', function(ServiceCallTen, ServiceCallFive){
+                var thisCtrlInstance = this;
+                thisCtrlInstance.serviceCall = function(){      
+                    thisCtrlInstance.varTenA = ServiceCallTen.fnTenA();
+                    thisCtrlInstance.varTenB = ServiceCallTen.fnTenB();
+                    thisCtrlInstance.varTenC = ServiceCallFive.opSeven();
+                }
+                
+            }])
+        
+            
+            .factory('ServiceCallFive', [ function(){
+                   var factoryVarFive = 12345;
+           
+                    return {
+                         opFive:    function(varFromCtrlNine){
+                                        console.log("Var Nine is: " + varFromCtrlNine);
+                                        if(varFromCtrlNine == null)
+                                            return factoryVarFive;
+                                        else
+                                            return factoryVarFive * varFromCtrlNine;
+                                    }, 
+
+                         opSeven:   function(){return (factoryVarFive - 1000 - 345);},
+
+                         opEight:   function(number){ return (factoryVarFive + number);}
+                    }
+            }])
+    
+            .factory('ServiceCallTen', [ function(){
+                  return {
+                        fnTenA: function(){
+                            return 10;
+                        },
+                        
+                        fnTenB: function(){
+                            return 20;
+                        }
+                  }
+                  
+                  
+            }])
+            
+            
+            
+            
+            
+        </script>
+        
+        
+        
+    
+    
+    
+        
+    </body>
+</html>
