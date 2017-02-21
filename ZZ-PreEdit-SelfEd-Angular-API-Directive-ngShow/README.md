@@ -1,5 +1,5 @@
 ### **_My 'SelfEd' Code Diaries_**
-#** :red_circle: Not Yet Ready - But it's something**
+#:red_circle: **Not Yet Ready - But it's something**
 #**AngularJS - _ZZ-PreEdit-SelfEd-Angular-API-Directive-ngShow_**
 
 Run the following for the unedited and :smile: unpresentable :smile: version 
