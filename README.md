@@ -1,4 +1,5 @@
 # ZZ-PreEdit SelfEds are unedited
+#:red_circle: **They Are Not Yet Ready - But They Are something**
 ## :small_blue_diamond: They are directly from my archives.
 ## :small_blue_diamond: They were mostly prepared in haste in order to understand new material needed for my core project objectives.
 ## :small_blue_diamond: I have not yet prepared them for formal presentation.
