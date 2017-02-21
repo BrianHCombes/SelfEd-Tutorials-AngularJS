@@ -1,7 +1,7 @@
 ### **_My 'SelfEd' Code Diaries_**
 #**AngularJS - _ZZ-PreEdit-SelfEd-Angular-API-Directive-ngShow_**
 
-Run the following for unedited and :simple_smile: unpresentable :simple_smile: version 
+Run the following for unedited and :smile: unpresentable :smile: version 
 
 Run in Plunker | Citation / Note
 ----------------------------------------------------------------------------|--------------------------------------------------------
