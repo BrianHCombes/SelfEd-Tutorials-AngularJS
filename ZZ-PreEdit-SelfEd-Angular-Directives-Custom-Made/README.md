@@ -6,5 +6,5 @@ Run the following for the unedited and :smile: unpresentable :smile: version
 
 Run in Plunker | Citation / Note
 ----------------------------------------------------------------------------|--------------------------------------------------------
-[:small_blue_diamond:**PreEdit Custom Directives SelfEd** - _ngShow.html_](https://plnkr.co/edit/TycgbW77e9CnPcXekz3W?p=preview) | :computer:run program for instructional content
+[:small_blue_diamond:**PreEdit Custom Directives SelfEd** - _CustomDirective.html_](https://plnkr.co/edit/TycgbW77e9CnPcXekz3W?p=preview) | :computer:run program for instructional content
 
