@@ -1,4 +1,6 @@
-This is a tutorial from [**Thomas Greco**](https://www.sitepoint.com/author/tgreco/). His tutorial is [How to Write Modular Code with Angular UI-Router & Named Views](http://www.sitepoint.com/write-modular-code-angular-ui-router-named-views)
+This is a tutorial from [**Thomas Greco**](https://www.sitepoint.com/author/tgreco/). His tutorial is [How to Write Modular Code with Angular UI-Router & Named Views](http://www.sitepoint.com/write-modular-code-angular-ui-router-named-views)    I also use some text content from [W3 Schools](https://www.w3schools.com/bootstrap/default.asp).
+
+# All credits should go to the above mentioned.
 
 I will later use his tutorial as a baseline to develop this SelfEd 
 
