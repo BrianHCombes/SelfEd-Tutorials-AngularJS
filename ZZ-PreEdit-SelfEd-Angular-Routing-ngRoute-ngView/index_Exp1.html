@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<!--
+http://www.w3schools.com/angular/angular_routing.asp
+
+
+This is a working routing example. Most of it is self explanatory. 
+But note the url path formats on the templateUrl lines and the folders containing
+the called upon html files.
+
+Also note the page links like #red have no name convention relation 
+with the templateUrl path. You can name them independently 
+
+-->
+
+
+<html>
+
+<head>
+<title>SelfEd-Angular-Routing-ngRoute-ng-view</title>
+<link rel="SHORTCUT ICON" href=support/teacher.png>
+       
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
+</head> 
+
+<body ng-app="myApp" style="width:600px;">
+
+<p><a href="#/">Main</a></p>
+
+<a href="#red">Red Page<br></a>
+<a href="#redPage"> Other Red Page<br> </a>
+<a href="#green"> Green Page<br> </a>
+<a href="#blue"> Blue Page<br></a>
+<a href="#cyan"> Cyan as un matched path is the .otherwise Page<br></a>
+
+<div ng-view></div>
+
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "main.html"
+    })
+    .when("/red", {
+        templateUrl : "red.html"
+    })
+    .when("/redPage", {
+        templateUrl : "./redPage/otherRed.html"
+        /*templateUrl : "./redPage/otherRed.html"*/ // This is the line that works
+    })
+    .when("/green", {
+        templateUrl : "./greenPage/green.html"
+    })
+    .when("/blue", {
+        templateUrl : "./bluePage/blue.html"
+    })
+    .otherwise({
+        templateUrl : "cyan.html"
+    });
+});
+</script>
+
+<p>Click on the links to navigate to the various pages</p>
+</body>
+</html>
