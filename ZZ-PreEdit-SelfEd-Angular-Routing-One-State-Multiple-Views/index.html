@@ -1,0 +1,61 @@
+<!--
+This lesson works for ui-routing. Review the app.js file to see how it works.
+
+Lesson is from  https://www.sitepoint.com/write-modular-code-angular-ui-router-named-views/
+                https://github.com/sitepoint-editors/sp-ui-router
+
+Here's a good lesson with a very likable strategy
+                http://joelhooks.com/blog/2013/07/22/the-basics-of-using-ui-router-with-angularjs/
+
+Went to this website to better understand the object $urlRouterProvider and got that and more as a complete lesson.
+                http://www.codemag.com/article/1505061
+
+Also:   https://angular-ui.github.io/ui-router/
+        https://github.com/angular-ui/ui-router/
+        http://stackoverflow.com/questions/16793724/otherwise-on-stateprovider
+
+
+
+Notes:
+Netbeans doesn't recognize ui-view so you must prefix with data thus: data-ui-view works.
+See http://stackoverflow.com/questions/26077892/ui-view-not-allowed-on-element-at-this-point
+
+The ui-router library is required as noted by the src script line below.
+
+-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SelfEd - UI-Router Tutorial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="SHORTCUT ICON" href="Icon - Sitepoint.png"> 
+
+    <style>
+      .footer {
+        background-color: #0AAAAA;
+        height: 150px;
+        color: white;
+        border: 2px solid black;
+        border-radius: 10px;
+        width:80%;
+        margin-left: auto;
+        margin-right: auto;
+        
+      }
+    </style>
+  </head>
+  <body ng-app="app">
+    <!--<div data-ui-view="nav"></div>-->
+    <div data-ui-view></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="appFolder/app.js"></script>
+  </body>
+</html>
