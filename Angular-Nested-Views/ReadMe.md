@@ -7,6 +7,12 @@ Run in Plunker | Citation / Note
 
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 
+### :arrow_down_small: **To Do Updates**
+**Date Posted**     |  **Update To Do Description** 
+------------------- | ------------------------------------------------------------------------
+02/23/2017          | Need to add the dot operator as another way to nest views. An example: $stateProvider.state("home.newest", {}); See the end of this page at this link [**Nesting with dot operator**](https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router.state.$stateProvider)
+
+
 ### :arrow_down_small: **Metadata**
 **SelfEd**          |  **Info** 
 ------------------- | ------------------------------------------------------------------------
