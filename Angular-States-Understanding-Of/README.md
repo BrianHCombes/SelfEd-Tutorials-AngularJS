@@ -41,7 +41,8 @@ SelfEds to run in Plunker | Citation / Note
                       | https://github.com/angular-ui/ui-router/wiki
                       | https://github.com/angular-ui/ui-router/wiki/Quick-Reference
                       | https://github.com/angular-ui/ui-router/wiki/Quick-Reference#stategoto--toparams--options
-                      | http://webdesign.about.com/od/beginningtutorials/a/aa040502a.htm                      
+                      | http://webdesign.about.com/od/beginningtutorials/a/aa040502a.htm     
+This is the Goto API  | https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router.state.$stateProvider
                       
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 
@@ -116,4 +117,7 @@ There is a simple example about using the **.run** method to initialize the defa
 
 At the end of this particular SelfEd I have an example of a nested view and and a link to my SelfEd about nested views called: 
 [:small_blue_diamond: **SelfEd - Angular-Nested-Views**](https://github.com/BrianHCombes/SelfEd-Tutorials-AngularJS/tree/master/Angular-Nested-Views).
+
+**02/22/2017**
+I'm working on passing parameters from state to state in SelfEd: [**Angular-State-Parameters-Passing-Of**](https://github.com/BrianHCombes/SelfEd-Tutorials-AngularJS/tree/master/ZZ-PreEdit-SelfEd-Angular-State-Parameters-Passing-Of) and of course I'm a little bewildered by some of the other tutorials I've referenced in the SelfEd. But the horse's mouth is the ui-router API where I can get all the available properties for a given state. This is one frustration I often have with finding good API's for defined objects, methods, classes, etc. But go here [**$stateProvider API**](https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router.state.$stateProvider) for thoses properties you are looking for. 
 
