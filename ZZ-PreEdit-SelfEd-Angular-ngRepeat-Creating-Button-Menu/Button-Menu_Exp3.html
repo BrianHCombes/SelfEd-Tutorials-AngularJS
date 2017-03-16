@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!-- This file is a member of SelfEd: < SelfEd-Angular-ngRepeat-Creating-Button-Menu -->
+<!--
+01/04/2017
+Button menu using ngRepeat.
+-->
+<html>
+<head>
+    <title>SelfEd - AngularJS ngRepeat - Button Menu</title>
+    <link rel="SHORTCUT ICON" href=support/teacher.png>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    
+<style>
+
+body
+{
+margin-left: auto;
+margin-right: auto;
+width: 1200px;
+}
+    
+#mainMessage
+{
+color:blue;
+font-size:24px;
+}
+    
+button
+{
+font-size:20px;
+color:red;
+width:150px;
+height:50px;
+cursor:pointer;
+}    
+
+#func2
+{
+font-size:30px;
+color:blue;
+}
+
+.styleData
+{
+color:red;
+font-size:16px;
+}
+
+</style>    
+</head>
+
+<body ng-app="imageApp">
+    
+    <div id="mainMessage" ng-controller="ImageCtrl as imageCtrl">
+        <span style="color:red; font-size:48px;">Creating buttons with ng-repeat</span><br>
+        {{imageCtrl.mainMsg}}<br><br>
+        
+        <!-- Code Block EEE -->
+        <div style="font-size:30px; color:black;">Button Menu 5 - See Code Blocks EEE</div>
+        <div ng-repeat="ListA in imageCtrl.listA">
+            <button ng-click="resizeA = {'transform':'scale(2,2)', 'margin-left':'150px'}">Resize button</button>
+            <button ng-click="imageCtrl.listFunctionA($index)" style="width:300px; height:50px;" ng-style="resizeA">{{ListA.label}}</button> 
+            <span class="styleData" ng-show="ListA.show">{{imageCtrl.funcMsgA}}</span>
+        </div> 
+        
+        <br><br>
+        
+        <div ng-repeat="ListB in imageCtrl.listB">
+            <button ng-click="imageCtrl.resizeB($index)">Resize button</button>
+            <button ng-click="imageCtrl.listFunctionB($index)" style="width:300px; height:50px;" ng-style="ListB.doResizeB">{{ListB.label}}</button> 
+            <span class="styleData" ng-show="ListB.show">{{imageCtrl.funcMsgB}}</span>
+        </div> 
+        
+        
+        
+    </div>
+    
+<script>
+
+    angular.module("imageApp",[])
+    .controller("ImageCtrl", ["DisplayDataServiceA", "DisplayDataServiceB", function(DisplayDataServiceA, DisplayDataServiceB){
+        var iCtrlVar = this;
+
+        // Code Block AAA
+        iCtrlVar.mainMsg =  "This is a demonstration using ng-repeat to display a menu of buttons. " +
+                            "Upon clicking a resize button, the adjacent button should doube in size.";
+
+             
+        // Code Block XXX
+         
+        iCtrlVar.listA =    DisplayDataServiceA.listA();
+        iCtrlVar.listFunctionA =    function(index){
+                                        DisplayDataServiceA.showBtn(index);
+                                        iCtrlVar.funcMsgA =  
+                                        "This red text from this clicked button is displayed";
+                                    };
+        // End Code Block EEE
+        
+        
+        
+        
+        iCtrlVar.listB =    DisplayDataServiceB.listB();
+        iCtrlVar.listFunctionB =    function(index){
+                                        DisplayDataServiceB.showBtn(index);
+                                        iCtrlVar.funcMsgB =  
+                                        "This red text from this clicked button is displayed";
+                                    };
+        
+        iCtrlVar.resizeB = function(index){
+            //alert();
+            DisplayDataServiceB.reSizeFunc(index);
+            //iCtrlVar.doResize =  DisplayDataServiceB.reSizeFunc(index);
+            //iCtrlVar.doResizeB = {'transform':'scale(2,2)', 'margin-left':'150px'};
+        }
+            
+        
+
+    }])
+
+    
+    
+        // Code Block EEE
+        .factory("DisplayDataServiceA", [function(){
+            
+            var listA = [
+                    {id:1, label:"button 1"},
+                    {id:2, label:"button 2"},
+                    {id:3, label:"button 3"},
+                    {id:4, label:"button 4"},
+                    {id:5, label:"button 5"}
+                ];
+                
+            return {
+                
+                listA:      function(){
+                                return listA;
+                            },
+                
+                showBtn:    function(index){
+                            for(i = 0; i < listA.length; i++){
+                                if(i == index)
+                                    listA[i].show = true;
+                                else
+                                    listA[i].show = false;
+                            }
+                },
+            }
+        }])
+    
+    
+        .factory("DisplayDataServiceB", [function(){
+            var listB = [
+                    {id:6, label:"button 6"},
+                    {id:7, label:"button 7"},
+                    {id:8, label:"button 8"},
+                    {id:9, label:"button 9"},
+                    {id:10, label:"button 10"}
+                ];
+                
+            return {
+                
+                listB:      function(){
+                                return listB;
+                            },
+                
+                showBtn:    function(index){
+                            for(i = 0; i < listB.length; i++){
+                                if(i == index)
+                                    listB[i].show = true;
+                                else
+                                    listB[i].show = false;
+                            }
+                },
+                
+                reSizeFunc: function(index){
+                            //alert(index);
+                            for(i = 0; i < listB.length; i++){
+                                if(i == index){
+                                    listB[i].show = true;
+                                    listB[i].doResizeB = {'transform':'scale(.5,.5)'};
+                                }    
+                                else{
+                                    listB[i].show = false;
+                                    listB[i].doResizeB = {'transform':'scale(1,1)'};
+                                }    
+                            }
+                }
+            }   
+                
+                
+        }])
+        // End Code Block EEE
+    
+  
+    
+</script>
+</body>
+</html>

@@ -88,3 +88,11 @@ Process:
 
     It should be noted if the array is to be re-saved on a database then
     the < show > property needs to be stripped away prior to saving.
+
+    03/16/2017
+    Have just added < Button-Menu_Exp3.html >. It has a resize set of 
+    buttons of which resize the adjacent button. The objective is to be able
+    to resize an associated image that would be part of an ngRepeat display.
+    I whipped up this code for demonstration and workability but will have
+    to do a more formal writeup later as I need to finish up a web project 
+    which will utilize this feature.
