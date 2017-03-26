@@ -10,6 +10,7 @@ Run in Plunker | Citation / Note
 ### :red_circle: **To Do Updates**
 **Date Posted**     |  **Description of Updates To Do** 
 ------------------- | ------------------------------------------------------------------------
+03-25-2017          | Found where the **'data'** word in **'data-ui-view'** comes from. See: **https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes**
 02/23/2017          | Need to add the dot operator as another way to nest views. An example: $stateProvider.state("home.newest", {}); See the end of this page at this link [**Nesting with dot operator**](https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router.state.$stateProvider)
 
 
