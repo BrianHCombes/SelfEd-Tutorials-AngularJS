@@ -10,7 +10,7 @@ Run in Plunker | Citation / Note
 ### :red_circle: **To Do Updates**
 **Date Posted**     |  **Description of Updates To Do** 
 ------------------- | ------------------------------------------------------------------------
-03-30-2017          | While studying custom directives, see book **AngularJS Up and Running - Chapter 11 - Page 176** I realized this is way to display HTML templates and snippets as well. However, I was not able nest these templates. I did not spend much time on it but it's worthy to dig deeper on this. 
+03-30-2017          | :heavy_exclamation_mark: I figured it out. Use the **restrict** keyword with the value of **E** to designate a directive as an HTML element and then you can nest another directive into it.    While studying custom directives, see book **AngularJS Up and Running - Chapter 11 - Page 176** I realized this is way to display HTML templates and snippets as well. However, I was not able nest these templates. I did not spend much time on it but it's worthy to dig deeper on this. 
 03-25-2017          | Found where the **'data'** word in **'data-ui-view'** comes from. See: **https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes**
 02/23/2017          | Need to add the dot operator as another way to nest views. An example: $stateProvider.state("home.newest", {}); See the end of this page at this link [**Nesting with dot operator**](https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router.state.$stateProvider)
 
