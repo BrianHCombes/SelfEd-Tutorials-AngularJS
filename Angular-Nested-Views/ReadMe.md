@@ -29,10 +29,10 @@ Run in Plunker | Citation / Note
 **Citation / Note**   | **Links learned from....**                                                
 ----------------------|-------------------------------------------------------------------
 A                     | https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router.state.$stateProvider
-B                      | https://github.com/angular-ui/ui-router/wiki/quick-reference#stateproviderstatestatename-stateconfig
-D                      | https://github.com/angular-ui/ui-router/wiki/quick-reference
-E                      | https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views
-F                      | http://codereview.stackexchange.com/questions/69266/json-conversion-to-single-quotes
+B                     | https://github.com/angular-ui/ui-router/wiki/quick-reference#stateproviderstatestatename-stateconfig
+D                     | https://github.com/angular-ui/ui-router/wiki/quick-reference
+E                     | https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views
+F                     | http://codereview.stackexchange.com/questions/69266/json-conversion-to-single-quotes
 G                     | https://github.com/angular-ui/ui-router/wiki/Nested-States-&-Nested-Views
           
           
