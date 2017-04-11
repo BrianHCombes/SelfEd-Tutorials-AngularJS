@@ -29,7 +29,7 @@ SelfEds to run in Plunker | Citation / Note
 **Citation / Note**   | **Links learned from....**                                                
 ----------------------|-----------------------
 [AAC](https://github.com/BrianHCombes/SelfEd-Tutorials-Javascript/blob/master/SelfEd-Javascript-Functions-Asynchronous-Calls/References.md)  | Primary tutorial credit goes to: **Joel Hooks**. His tutorial that helped me the most is here:   http://joelhooks.com/blog/2013/07/22/the-basics-of-using-ui-router-with-angularjs/ 
-Learned From:         | https://leanpub.com/router
+Learned from:| https://leanpub.com/router
 Learned From:         | https://medium.com/@vsavkin
 Learned From:         | https://ui-router.github.io/guide/states  (This is a great tutorial)
 Learned From:         | https://ui-router.github.io/ng1/
