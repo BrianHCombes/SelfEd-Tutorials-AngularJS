@@ -28,12 +28,12 @@ Run in Plunker | Citation / Note
 ### :arrow_down_small: **Tutorial Links**
 **Citation / Note**   | **Links learned from....**                                                
 ----------------------|-------------------------------------------------------------------
--                     | https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router.state.$stateProvider
--                     | https://github.com/angular-ui/ui-router/wiki/quick-reference#stateproviderstatestatename-stateconfig
--                     | https://github.com/angular-ui/ui-router/wiki/quick-reference
--                     | https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views
--                     | http://codereview.stackexchange.com/questions/69266/json-conversion-to-single-quotes
--                     | https://github.com/angular-ui/ui-router/wiki/Nested-States-&-Nested-Views
+Learned from:         | https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router.state.$stateProvider
+Learned from:         | https://github.com/angular-ui/ui-router/wiki/quick-reference#stateproviderstatestatename-stateconfig
+Learned from:         | https://github.com/angular-ui/ui-router/wiki/quick-reference
+Learned from:         | https://github.com/angular-ui/ui-router/wiki/Multiple-Named-Views
+Learned from:         | http://codereview.stackexchange.com/questions/69266/json-conversion-to-single-quotes
+Learned from:         | https://github.com/angular-ui/ui-router/wiki/Nested-States-&-Nested-Views
           
           
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
