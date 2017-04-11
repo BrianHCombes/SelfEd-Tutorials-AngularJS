@@ -7,6 +7,10 @@ SelfEds to run in Plunker | Citation / Note
 [:small_blue_diamond:**Finite States using ngRoute** - _Basic-States_Exp0b.html_](https://plnkr.co/edit/L5PndkcloCtAPt9bln5o?p=preview) | NA    
 [:small_blue_diamond:**Finite States using ui-router** - _Basic-States_Exp0c.html_](https://plnkr.co/edit/ngVu8z4eEdp2dqp7hzKS?p=preview) | [Citation AAC - Author credit for basic code structure](https://github.com/BrianHCombes/SelfEd-Tutorials-Javascript/blob/master/SelfEd-Javascript-Functions-Asynchronous-Calls/References.md)       
 
+A | B
+
+
+
 [:small_blue_diamond:**Understanding States using ui-router** - _Basic-States_Exp1.html_](https://plnkr.co/edit/910949PUN6V5uX5lswEa?p=preview) | :computer:run program for instructional content
 |
 [:small_blue_diamond:**Understanding States using ui-router - Other Default View Options** - _Basic-States_Exp2.html_](https://plnkr.co/edit/JBpCaIeV9BuyBtKYQCJt?p=preview) | :computer:run program for instructional content
