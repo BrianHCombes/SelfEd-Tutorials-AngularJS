@@ -13,11 +13,7 @@ SelfEds to run in Plunker | Citation / Note
 
 ### :arrow_down_small: **Metadata**
 
-**SelfEd**|**Info** 
-------------------- | ---------------------
-**Date:**| 10/19/2016
-**Archive_Title:**  | SelfEd-Angular-States-Understanding-Of
-**Objective:**      | To better understand routes (states) and the differences between ngRoute and ui-router.
+
   
 
 
