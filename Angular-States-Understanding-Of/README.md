@@ -1,5 +1,6 @@
 ### **_My 'SelfEd' Code Diaries_**
-#**AngularJS - _Understanding States_**
+#**AngularJS - _Understanding States_**      
+
 SelfEds to run in Plunker | Citation / Note
 ----------------------------------------------------------------------------|--------------------------------------------------------
 [:small_blue_diamond:**ngRoute and ui-router in same config module** - _Basic-States_Exp0a.html_](https://plnkr.co/edit/tZ2xyi8Tn3vD7DauKpMN?p=preview)| **It can't be good!**       
