@@ -12,12 +12,25 @@ SelfEds to run in Plunker | Citation / Note
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 
 ### :arrow_down_small: **Metadata**
-**SelfEd**          |  **Info** 
-------------------- | ------------------------------------------------------------------------
-**Date:**           | 10/19/2016
+
+**SelfEd**|**Info** 
+------------------- | ---------------------
+**Date:**| 10/19/2016
 **Archive_Title:**  | SelfEd-Angular-States-Understanding-Of
 **Objective:**      | To better understand routes (states) and the differences between ngRoute and ui-router.
-**Catalyst:**      | To better know an important component of Angular.                                                                        
+  
+
+
+**SelfEd**|**Info** 
+-------|--------
+**Date:**|10/19/2016
+**Archive_Title:**  | SelfEd-Angular-States-Understanding-Of
+**Objective:**      | To better understand routes (states) and the differences between ngRoute and ui-router.
+**Catalyst:**       | To better know an important component of Angular.  
+
+
+
+
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
 
 ### :arrow_down_small: **Tutorial Links**
