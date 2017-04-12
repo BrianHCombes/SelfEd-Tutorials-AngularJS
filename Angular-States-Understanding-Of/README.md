@@ -30,23 +30,23 @@ SelfEds to run in Plunker | Citation / Note
 --------------------------------------|-----------------------
 [AAC](https://github.com/BrianHCombes/SelfEd-Tutorials-Javascript/blob/master/SelfEd-Javascript-Functions-Asynchronous-Calls/References.md)  | Primary tutorial credit goes to: **Joel Hooks**. His tutorial that helped me the most is here:   http://joelhooks.com/blog/2013/07/22/the-basics-of-using-ui-router-with-angularjs/ 
 Learned:| https://leanpub.com/router
-Learned from:| https://medium.com/@vsavkin
-Learned from:| https://ui-router.github.io/guide/states  (This is a great tutorial)
-Learned from:| https://ui-router.github.io/ng1/
-Learned from:| https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router
-Learned from:| http://ngmodules.org/modules/ui-router
-Learned from:| http://stackoverflow.com/questions/20482051/how-to-set-a-default-state-with-angular-ui-router
-Learned from:| http://stackoverflow.com/questions/21023763/angularjs-difference-between-angular-route-and-angular-ui-router 
-Learned from:| https://docs.angularjs.org/api/ng/directive/ngModel
-Learned from:| https://docs.angularjs.org/api/ng/directive/select
-Learned from:| https://docs.angularjs.org/api/ng/directive/ngOptions (go to the example at the end of this web page)
-Learned from:| http://stackoverflow.com/questions/24526801/difference-between-ui-sref-and-state-go-in-angularjs-ui-router
-Learned from:| https://www.oho.com/blog/explained-60-seconds-hash-symbols-urls-and-seo
-Learned from:| https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router.state.$state
-Learned from:| https://github.com/angular-ui/ui-router/wiki
-Learned from:| https://github.com/angular-ui/ui-router/wiki/Quick-Reference
-Learned from:| https://github.com/angular-ui/ui-router/wiki/Quick-Reference#stategoto--toparams--options
-Learned from:| http://webdesign.about.com/od/beginningtutorials/a/aa040502a.htm     
+Learned:| https://medium.com/@vsavkin
+Learned:| https://ui-router.github.io/guide/states  (This is a great tutorial)
+Learned:| https://ui-router.github.io/ng1/
+Learned:| https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router
+Learned:| http://ngmodules.org/modules/ui-router
+Learned:| http://stackoverflow.com/questions/20482051/how-to-set-a-default-state-with-angular-ui-router
+Learned:| http://stackoverflow.com/questions/21023763/angularjs-difference-between-angular-route-and-angular-ui-router 
+Learned:| https://docs.angularjs.org/api/ng/directive/ngModel
+Learned:| https://docs.angularjs.org/api/ng/directive/select
+Learned:| https://docs.angularjs.org/api/ng/directive/ngOptions (go to the example at the end of this web page)
+Learned:| http://stackoverflow.com/questions/24526801/difference-between-ui-sref-and-state-go-in-angularjs-ui-router
+Learned:| https://www.oho.com/blog/explained-60-seconds-hash-symbols-urls-and-seo
+Learned:| https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router.state.$state
+Learned:| https://github.com/angular-ui/ui-router/wiki
+Learned:| https://github.com/angular-ui/ui-router/wiki/Quick-Reference
+Learned:| https://github.com/angular-ui/ui-router/wiki/Quick-Reference#stategoto--toparams--options
+Learned:| http://webdesign.about.com/od/beginningtutorials/a/aa040502a.htm     
 This is the Goto API| https://ui-router.github.io/ng1/docs/0.3.1/index.html#/api/ui.router.state.$stateProvider
                       
 :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
